@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="favBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#001849" />
+      <stop offset="100%" stop-color="#000D2B" />
+    </linearGradient>
+    
+    <linearGradient id="favArrowTopGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFDC00" />
+      <stop offset="45%" stop-color="#FF8800" />
+      <stop offset="100%" stop-color="#E85D25" />
+    </linearGradient>
+    
+    <linearGradient id="favArrowBottomGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6000" />
+      <stop offset="60%" stop-color="#D93B00" />
+      <stop offset="100%" stop-color="#9E1B00" />
+    </linearGradient>
+    
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#E85D25" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Dark Navy Luxury Squircle Background -->
+  <rect width="512" height="512" rx="128" fill="url(#favBgGrad)" />
+  <rect x="8" y="8" width="496" height="496" rx="120" fill="none" stroke="url(#favArrowTopGrad)" stroke-width="6" stroke-opacity="0.4" />
+
+  <!-- 3D Folded Brand Arrow Icon Mark -->
+  <g transform="translate(76, 116) scale(2.0)" filter="url(#glow)">
+    <polygon points="10,110 180,5 118,78" fill="url(#favArrowTopGrad)" />
+    <polygon points="118,78 180,5 142,125" fill="url(#favArrowBottomGrad)" />
+  </g>
+</svg>

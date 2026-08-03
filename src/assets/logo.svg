@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" width="100%" height="100%">
+  <defs>
+    <linearGradient id="arrowTop" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFDC00" />
+      <stop offset="45%" stop-color="#FF8800" />
+      <stop offset="100%" stop-color="#E85D25" />
+    </linearGradient>
+    <linearGradient id="arrowBottom" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6000" />
+      <stop offset="60%" stop-color="#D93B00" />
+      <stop offset="100%" stop-color="#9E1B00" />
+    </linearGradient>
+  </defs>
+
+  <!-- 3D Folded Arrow -->
+  <g transform="translate(100, 10)">
+    <polygon points="10,110 180,5 118,78" fill="url(#arrowTop)" />
+    <polygon points="118,78 180,5 142,125" fill="url(#arrowBottom)" />
+  </g>
+
+  <!-- AN ARROW HUB Text -->
+  <text x="200" y="165" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="32" letter-spacing="2" fill="currentColor" text-anchor="middle">AN ARROW HUB</text>
+
+  <!-- by INDUS GROUP Text -->
+  <text x="200" y="200" text-anchor="middle">
+    <tspan font-family="Georgia, serif" font-style="italic" font-size="20" fill="currentColor">by </tspan>
+    <tspan font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="20" letter-spacing="4" fill="currentColor">INDUS GROUP</tspan>
+  </text>
+</svg>
