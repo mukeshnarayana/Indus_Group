@@ -574,7 +574,7 @@ export default function Home() {
 
               <div className="pt-2">
                 <Link
-                  to="/services/hospitality"
+                  to="/about"
                   className="inline-flex items-center gap-3 font-mono-code text-xs uppercase tracking-wider px-7 py-4 bg-gradient-to-r from-[#F5A623] to-[#E85D25] text-[#001849] font-bold rounded-lg hover:brightness-110 transition-all shadow-lg"
                 >
                   <span>Explore Arrow Hotels Sector</span>
