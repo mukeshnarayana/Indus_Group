@@ -1,132 +1,206 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShoppingBag, Building, Factory, Briefcase, ArrowRight, Check } from 'lucide-react';
+import { Store, Building2, Factory, Briefcase, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export default function ExploreServices() {
   const sectors = [
     {
       id: 'retail',
-      title: 'Retail Integration',
+      num: '01',
+      title: 'Retail Commercial Space',
       path: '/services/retail',
-      tagline: 'Luxury Boutique Arcades & Accessible Shopping',
-      desc: 'Seamlessly merging 5-star accommodations with curated luxury retail arcades. Features hands-free shopping assistance, VIP dressing suites, and universal arcade access.',
-      icon: ShoppingBag,
-      image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80',
-      highlights: ['VIP Personal Shopper Concierge', 'Barrier-Free Luxury Arcades', 'In-Suite Product Presentations']
+      tagline: 'High-Street & Shopping Centre Advisory',
+      desc: 'We combine industry expertise, market insight, and hands-on experience to help retailers, restaurateurs, investors, owners, and developers achieve real results — through integrated real estate strategies tailored to each client\'s specific goals.',
+      icon: Store,
+      image: 'https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?auto=format&fit=crop&w=1200&q=80',
+      statLabel: 'RETAIL PROFESSIONALS',
+      statVal: '30+',
+      highlights: ['Brand & Tenant Expansion', 'Shopping Centre Leasing', 'Landlord & Developer Advisory']
     },
     {
       id: 'hospitality',
-      title: 'Hospitality & Executive Suites',
+      num: '02',
+      title: 'Hospitality & Hotels',
       path: '/services/hospitality',
-      tagline: 'Adaptive Presidential & Penthouse Stays',
-      desc: 'Our flagship hospitality suites offer motorized height-adjustable fixtures, sensory quiet rooms, fine-dining in-suite experiences, and 24/7 butler service.',
-      icon: Building,
-      image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80',
-      highlights: ['Motorized Adaptive Interiors', 'Michelin-Inspired In-Suite Dining', '24/7 Personal Care Butler']
+      tagline: 'Strategic Asset Advisory & Hotel Investment',
+      desc: 'Our hotels and hospitality team brings a strong record of successful deals, helping investors across the industry build smarter strategies, refine their holdings, and get the most out of every asset with research-backed guidance.',
+      icon: Building2,
+      image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80',
+      statLabel: 'HOSPITALITY ADVISORS',
+      statVal: '30+',
+      highlights: ['Asset Acquisition & Expansion', 'Asset Advisory & Exit Strategy', 'Hotel Performance Optimization']
     },
     {
       id: 'industrial',
-      title: 'Industrial Stays & Logistics Hubs',
+      num: '03',
+      title: 'Industrial & Logistics',
       path: '/services/industrial',
-      tagline: 'Executive Lodging Near Commercial Nodes',
-      desc: 'Designed for corporate directors, engineers, and project managers overseeing industrial operations. Offers soundproofed executive suites, fast express check-in, and team hubs.',
+      tagline: 'End-to-End Supply Chain Real Estate Platform',
+      desc: 'Operating one of the region\'s most established industrial real estate platforms, supporting companies whose success hinges on strong supply chains, connected locations, and optimized warehousing infrastructure.',
       icon: Factory,
-      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80',
-      highlights: ['High-Acoustic Insulation', 'Industrial Park Proximity', 'Express Executive Logistics']
+      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80',
+      statLabel: 'ACRES COVERED',
+      statVal: '500+',
+      highlights: ['Ready Warehouse Leasing', 'Built-to-Suit Industrial Hubs', 'Multi-City Land Acquisition']
     },
     {
       id: 'office',
-      title: 'Office & Business Workspaces',
+      num: '04',
+      title: 'Office Commercial Space',
       path: '/services/office',
-      tagline: 'Corporate Conference & Flexible Suites',
-      desc: 'High-tech meeting rooms, private executive offices, and long-stay business suites equipped with high-speed fiber internet, video conference systems, and administrative support.',
+      tagline: 'Workspace Optimization & Portfolio Strategy',
+      desc: 'Supporting occupiers, landlords, and investors with workspace efficiency, portfolio decisions, asset management, and landmark property transactions across suburban business parks and city towers.',
       icon: Briefcase,
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
-      highlights: ['Ultra-Speed 10Gbps Internet', 'Video Conference Amphitheaters', 'Long-Stay Executive Offices']
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80',
+      statLabel: 'PORTFOLIO TRANSACTIONS',
+      statVal: '100+',
+      highlights: ['Occupier Workspace Optimization', 'Landlord Asset Management', 'Suburban & Tower Leasing']
     }
   ];
 
   return (
-    <div className="pt-20">
+    <div className="pt-20 bg-[#FBF8F2] min-h-screen text-[#14171F]">
       
-      {/* Header */}
-      <section className="bg-[#001849] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+      {/* Hero Banner */}
+      <section className="bg-[#001849] text-white py-20 md:py-24 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl relative z-10 space-y-4">
           <div className="eyebrow justify-center text-[#F5A623]">
-            <span>Comprehensive Sector Overview</span>
+            <span>Indus & Arrow Real Estate Platform</span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold font-serif mb-6">
-            Explore Our Four Service Pillars
+          
+          <h1 className="text-4xl md:text-6xl font-bold font-serif text-white tracking-tight leading-tight">
+            Our Practice Sectors
           </h1>
-          <p className="text-white/80 text-base md:text-lg font-sans">
-            Arrow Hotels provides tailored, barrier-free luxury solutions across retail, hospitality, industrial, and corporate environments.
+          
+          <p className="text-white/85 text-base md:text-lg font-serif max-w-2xl mx-auto leading-relaxed">
+            Delivering integrated real estate strategy, market intelligence, and transaction advisory across prime commercial, hospitality, industrial, and retail sectors.
           </p>
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Metric Summary Bar */}
+      <section className="bg-[#001233] text-white py-8 border-y border-white/10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x divide-white/15">
+            <div>
+              <div className="font-serif text-3xl sm:text-4xl font-bold text-[#F5A623]">4</div>
+              <div className="font-mono-code text-[11px] uppercase tracking-widest text-white/70">Core Practice Areas</div>
+            </div>
+            <div>
+              <div className="font-serif text-3xl sm:text-4xl font-bold text-[#F5A623]">100+</div>
+              <div className="font-mono-code text-[11px] uppercase tracking-widest text-white/70">Trade Client Network</div>
+            </div>
+            <div>
+              <div className="font-serif text-3xl sm:text-4xl font-bold text-[#F5A623]">500+</div>
+              <div className="font-mono-code text-[11px] uppercase tracking-widest text-white/70">Acres Handled</div>
+            </div>
+            <div>
+              <div className="font-serif text-3xl sm:text-4xl font-bold text-[#F5A623]">50+</div>
+              <div className="font-mono-code text-[11px] uppercase tracking-widest text-white/70">Cities Footprint</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4 Practice Sectors: Left Div Text Matter, Right Div High-Res Image */}
       <section className="py-20 bg-[#FBF8F2]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          {sectors.map((sec, idx) => {
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+          {sectors.map((sec) => {
             const Icon = sec.icon;
-            const isEven = idx % 2 === 0;
 
             return (
               <div 
-                key={sec.id} 
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-white p-8 md:p-12 border border-[#14171F]/10 shadow-sm ${
-                  !isEven ? 'lg:grid-flow-dense' : ''
-                }`}
+                key={sec.id}
+                id={sec.id}
+                className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-white p-8 sm:p-12 rounded-3xl border border-stone-200 shadow-sm"
               >
-                <div className={!isEven ? 'lg:col-start-2' : ''}>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 bg-[#00287A] text-[#F5A623]">
-                      <Icon className="w-6 h-6" />
+                {/* Left Div: Matter / Text Content */}
+                <div className="lg:col-span-7 space-y-6">
+                  <div className="flex items-center gap-3">
+                    <span className="font-mono-code text-2xl font-bold text-[#E85D25]">
+                      {sec.num}
+                    </span>
+                    <div className="w-10 h-10 rounded-xl bg-orange-100/80 text-[#E85D25] flex items-center justify-center font-bold">
+                      <Icon className="w-5 h-5" />
                     </div>
-                    <span className="font-mono-code text-xs text-[#E85D25] uppercase tracking-wider font-semibold">
-                      Sector {idx + 1}
+                    <span className="font-mono-code text-xs text-[#E85D25] uppercase tracking-wider font-bold">
+                      {sec.tagline}
                     </span>
                   </div>
 
-                  <h2 className="text-3xl font-serif font-bold text-[#001849] mb-2">
+                  <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#001849] leading-tight">
                     {sec.title}
                   </h2>
-                  <div className="font-sans text-sm text-[#E85D25] font-semibold mb-4">
-                    {sec.tagline}
-                  </div>
 
-                  <p className="text-[#6B6E7A] text-sm leading-relaxed mb-6">
+                  <p className="text-[#14171F]/85 font-serif text-base leading-relaxed">
                     {sec.desc}
                   </p>
 
-                  <ul className="space-y-2 mb-8">
+                  {/* Highlights Grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
                     {sec.highlights.map((item, hIdx) => (
-                      <li key={hIdx} className="flex items-center gap-2.5 text-xs font-mono-code text-[#14171F]">
-                        <Check className="w-4 h-4 text-[#E85D25]" />
+                      <div key={hIdx} className="p-3 bg-[#FBF8F2] rounded-xl border border-stone-200 flex items-center gap-2 text-xs font-serif font-semibold text-[#001849]">
+                        <CheckCircle2 className="w-4 h-4 text-[#E85D25] shrink-0" />
                         <span>{item}</span>
-                      </li>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
 
-                  <Link 
-                    to={sec.path} 
-                    className="inline-flex items-center gap-2 font-mono-code text-xs uppercase tracking-wider px-6 py-3 bg-[#00287A] text-white hover:bg-[#E85D25] transition-colors"
-                  >
-                    <span>View {sec.title} Sub-Page</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
+                  <div className="pt-4 flex flex-col sm:flex-row items-center gap-4">
+                    <Link
+                      to={sec.path}
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-3 font-mono-code text-xs uppercase tracking-wider px-8 py-4 bg-[#001849] text-white font-bold hover:bg-[#E85D25] transition-colors rounded-lg shadow-lg"
+                    >
+                      <span>Explore Full {sec.title} Page</span>
+                      <ArrowRight className="w-4 h-4 text-[#F5A623]" />
+                    </Link>
+
+                    <div className="flex items-center gap-3 bg-[#FBF8F2] px-5 py-3 rounded-lg border border-stone-200">
+                      <span className="font-serif text-2xl font-bold text-[#E85D25]">{sec.statVal}</span>
+                      <span className="font-mono-code text-[10px] text-[#6B6E7A] uppercase leading-tight font-bold">{sec.statLabel}</span>
+                    </div>
+                  </div>
                 </div>
 
-                <div className={`relative h-80 lg:h-full min-h-[320px] overflow-hidden ${!isEven ? 'lg:col-start-1' : ''}`}>
+                {/* Right Div: High-Res Image Content */}
+                <div className="lg:col-span-5 relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-xl border-4 border-[#FBF8F2]">
                   <img 
                     src={sec.image} 
                     alt={sec.title} 
-                    className="w-full h-full object-cover shadow-md"
+                    className="w-full h-full object-cover"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#001849]/60 via-transparent to-transparent opacity-60" />
+                  <div className="absolute bottom-6 left-6 right-6 text-white bg-[#001849]/85 backdrop-blur-md p-4 rounded-xl border border-white/15">
+                    <div className="font-serif font-bold text-base text-[#F5A623]">{sec.title}</div>
+                    <div className="text-xs text-white/80 font-serif">{sec.tagline}</div>
+                  </div>
                 </div>
+
               </div>
             );
           })}
+        </div>
+      </section>
+
+      {/* Floating Contact Banner */}
+      <section className="py-20 bg-[#FBF8F2] border-t border-stone-200/60">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white p-8 sm:p-12 rounded-2xl shadow-md border border-stone-200 text-center space-y-4">
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#001849]">
+              We would like to hear from you
+            </h2>
+            <p className="text-xs sm:text-sm text-[#6B6E7A] font-serif max-w-md mx-auto">
+              Share a few details about your request to get started with our team.
+            </p>
+            <div className="pt-2">
+              <Link
+                to="/contact"
+                className="inline-block px-8 py-3 bg-[#C2410C] hover:bg-[#9A3412] text-white font-mono-code text-xs font-bold uppercase tracking-wider rounded-lg transition-colors shadow"
+              >
+                Contact Us
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 

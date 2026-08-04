@@ -1,0 +1,78 @@
+[
+    {
+        state: Andhra Pradesh,
+        City: Visakhapatnam, Kurmannapalem,
+        brand : zudio,
+        developer: Abiram Developers ,
+        space: 4500 sqft,
+        image: https://lh3.googleusercontent.com/gps-cs-s/AHRPTWn-9WshKw3cMZCRT6CbHbN1bJzuJQX9gW6cSpqomTq-ywAswOvBOxeGaQwwMvUJR3el-SSCetElwEbBdcMrVMTK35YNAghhCpdM3womVErW5FFk9cAtSy6EFHNcNrBrhc1nW-Y213_S1Sw=w243-h304-n-k-no-nu
+    },
+    {
+        state: Andhra Pradesh,
+        City: Visakhapatnam, Kurmannapalem,
+        brand : style union,
+        developer: Abiram Developers ,
+        space: 4500 sqft,
+        image: https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnx4ucv5ZHRlAuMZ-M0_bgwMgbhrXcDZokQrYNaLwHF3IdWIdpfBDyTQMirvLJouE1hNrMeERKHG55-lloMVYF-e4lst-N8OwY6OUETAG64MA-AO-blGismk49VXTjqusnY-Ysd=s1360-w1360-h1020-rw
+    },
+    {
+        state: Andhra Pradesh,
+        City: Visakhapatnam, Kurmannapalem,
+        brand : style union,
+        developer: Abiram Developers ,
+        space: 4500 sqft,
+        image: https://streetviewpixels-pa.googleapis.com/v1/thumbnail?output=thumbnail&cb_client=lu.gallery.gps&panoid=jyKMZgcA9iuKBugmm5zmrg&w=980&h=200&thumb=2&yaw=63.445694&pitch=0
+    },
+    {
+        state: Andhra Pradesh,
+        City: Visakhapatnam, muralinagar,
+        brand : style union,
+        space: 1000 sqft,
+        image:  https://lh3.googleusercontent.com/gps-cs-s/AHRPTWk8Ftb3qYSSICT877FR3dc9jDIfoCSnhIT7dGCAmZ6vBfea6YXBRxPoRmPigY7OBdIDABi-P3ekIoOsWpq3vnre8ajD4sLoP1DThOdgXagkVQAO1slzqMAIo73be4uBlYWIrM7AzoQ87Kjq=s1360-w1360-h1020-rw
+    },
+    {
+        state: Andhra Pradesh,
+        City: Visakhapatnam, muralinagar,
+        brand : dmart,
+        space: 1000 sqft,
+        image:  https://scontent.fhyd3-1.fna.fbcdn.net/v/t39.30808-6/481791060_1664969657561367_6660461780421218873_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x608&ctp=s1080x608&_nc_cat=109&ccb=1-7&_nc_sid=0b6b33&_nc_ohc=yu1jZLehwUUQ7kNvwG-RCWE&_nc_oc=Adr5oVUFP8eb_RZckcAzxyJK-YkcU9cb_pPGCEvI5OUR5y09KHr-O11jeZqhtzLTYDA&_nc_zt=23&_nc_ht=scontent.fhyd3-1.fna&_nc_gid=mMfAkTfi_f_TpHjkMEMjBg&_nc_ss=7b289&oh=00_AQFDKex-80165PfErEwUAswJ_MjYyKbTMGEu8iC_Qsyv0A&oe=6A77B112
+    },
+    {
+        state: Telangana,
+        city: Hastinapuram,
+        brand: IBO,
+        space: 15000 sqft,
+        image: https://lscdn.azureedge.net/biz-live/img/11843691-11843691-6c16f3ac.jpeg
+    },
+    {
+        state: Telangana,
+        city: karmanghat ,
+        brand:  mangalya shopping mall,
+        space: 20000 sqft,
+        image: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAvVzA_cGNKZDtTU0jp70WBp8wLgnm7wa6eYhLEUMElPTKQ0CM_yYu3VE&s=10
+    },
+    {
+       state: Telangana,
+        city: karmanghat ,
+        brand:  sconvencetions,
+        space: 2000 sqft,
+        future: signed with max and DIY
+    },
+    {
+       state: Telangana,
+        city: karmanghat ,
+        future: signed with max and DIY
+    },
+    {
+        state: Andhra Pradesh,
+        city: Srikakulam,
+        brand: unlimited,
+        space: 7000 sqft
+    },
+    {
+        state: Andhra Pradesh,
+        city: vizianagaram,
+        brand: kalyan jewellers,
+        space: 17000 sqft
+    }
+]

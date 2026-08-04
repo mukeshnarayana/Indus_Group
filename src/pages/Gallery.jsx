@@ -1,148 +1,205 @@
 import React, { useState } from 'react';
-import { X, ZoomIn, Eye, Filter } from 'lucide-react';
+import { X, ZoomIn, MapPin, Building, Maximize2, Tag, CheckCircle2, Filter, ImageIcon } from 'lucide-react';
 
 export default function Gallery() {
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [activeImage, setActiveImage] = useState(null);
+  const [selectedFilter, setSelectedFilter] = useState('All');
+  const [activeProject, setActiveProject] = useState(null);
 
-  const categories = ['All', 'Suites', 'Dining', 'Accessibility', 'Architecture', 'Business'];
-
-  const images = [
+  const projects = [
     {
       id: 1,
-      title: 'The Sovereign Presidential Suite',
-      category: 'Suites',
-      image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=80',
-      desc: 'Panoramically glinting skyline view with motorized adaptive interior.'
+      brand: 'Zudio',
+      state: 'Andhra Pradesh',
+      city: 'Visakhapatnam, Kurmannapalem',
+      developer: 'Abiram Developers',
+      space: '4,500 sqft',
+      image: 'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWn-9WshKw3cMZCRT6CbHbN1bJzuJQX9gW6cSpqomTq-ywAswOvBOxeGaQwwMvUJR3el-SSCetElwEbBdcMrVMTK35YNAghhCpdM3womVErW5FFk9cAtSy6EFHNcNrBrhc1nW-Y213_S1Sw=w243-h304-n-k-no-nu'
     },
     {
       id: 2,
-      title: 'Retail Hotel Luxury Promenade',
-      category: 'Architecture',
-      image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80',
-      desc: 'Marble-clad arcade with zero-threshold entries into boutique shops.'
+      brand: 'Style Union',
+      state: 'Andhra Pradesh',
+      city: 'Visakhapatnam, Kurmannapalem',
+      developer: 'Abiram Developers',
+      space: '4,500 sqft',
+      image: 'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnx4ucv5ZHRlAuMZ-M0_bgwMgbhrXcDZokQrYNaLwHF3IdWIdpfBDyTQMirvLJouE1hNrMeERKHG55-lloMVYF-e4lst-N8OwY6OUETAG64MA-AO-blGismk49VXTjqusnY-Ysd=s1360-w1360-h1020-rw'
     },
     {
       id: 3,
-      title: 'Michelin-Inspired Fine Dining',
-      category: 'Dining',
-      image: 'https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1000&q=80',
-      desc: 'Wheelchair-accessible lowered tables and sensory quiet dining spaces.'
+      brand: 'Style Union',
+      state: 'Andhra Pradesh',
+      city: 'Visakhapatnam, Kurmannapalem',
+      developer: 'Abiram Developers',
+      space: '4,500 sqft',
+      image: 'https://streetviewpixels-pa.googleapis.com/v1/thumbnail?output=thumbnail&cb_client=lu.gallery.gps&panoid=jyKMZgcA9iuKBugmm5zmrg&w=980&h=200&thumb=2&yaw=63.445694&pitch=0'
     },
     {
       id: 4,
-      title: 'Adaptive Bath & Roll-In Hydro Shower',
-      category: 'Accessibility',
-      image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=80',
-      desc: 'Non-slip Italian marble, integrated support bars, and temperature safety controls.'
+      brand: 'Style Union',
+      state: 'Andhra Pradesh',
+      city: 'Visakhapatnam, Muralinagar',
+      space: '1,000 sqft',
+      image: 'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWk8Ftb3qYSSICT877FR3dc9jDIfoCSnhIT7dGCAmZ6vBfea6YXBRxPoRmPigY7OBdIDABi-P3ekIoOsWpq3vnre8ajD4sLoP1DThOdgXagkVQAO1slzqMAIo73be4uBlYWIrM7AzoQ87Kjq=s1360-w1360-h1020-rw'
     },
     {
       id: 5,
-      title: 'Industrial Executive Boardroom',
-      category: 'Business',
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80',
-      desc: 'High-speed encrypted fiber network and closed-captioning video wall.'
+      brand: 'DMart',
+      state: 'Andhra Pradesh',
+      city: 'Visakhapatnam, Muralinagar',
+      space: '1,000 sqft',
+      image: 'https://scontent.fhyd3-1.fna.fbcdn.net/v/t39.30808-6/481791060_1664969657561367_6660461780421218873_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x608&ctp=s1080x608&_nc_cat=109&ccb=1-7&_nc_sid=0b6b33&_nc_ohc=yu1jZLehwUUQ7kNvwG-RCWE&_nc_oc=Adr5oVUFP8eb_RZckcAzxyJK-YkcU9cb_pPGCEvI5OUR5y09KHr-O11jeZqhtzLTYDA&_nc_zt=23&_nc_ht=scontent.fhyd3-1.fna&_nc_gid=mMfAkTfi_f_TpHjkMEMjBg&_nc_ss=7b289&oh=00_AQFDKex-80165PfErEwUAswJ_MjYyKbTMGEu8iC_Qsyv0A&oe=6A77B112'
     },
     {
       id: 6,
-      title: 'Flagship Hotel Grand Atrium',
-      category: 'Architecture',
-      image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1000&q=80',
-      desc: 'Natural lighting, tactile floor paths, and ambient acoustic isolation.'
+      brand: 'IBO',
+      state: 'Telangana',
+      city: 'Hastinapuram',
+      space: '15,000 sqft',
+      image: 'https://lscdn.azureedge.net/biz-live/img/11843691-11843691-6c16f3ac.jpeg'
     },
     {
       id: 7,
-      title: 'Penthouse Terrace & Hydro-Lift Pool',
-      category: 'Suites',
-      image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=80',
-      desc: 'Private outdoor heated pool equipped with universal water-chair lift.'
+      brand: 'Mangalya Shopping Mall',
+      state: 'Telangana',
+      city: 'Karmanghat',
+      space: '20,000 sqft',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAvVzA_cGNKZDtTU0jp70WBp8wLgnm7wa6eYhLEUMElPTKQ0CM_yYu3VE&s=10'
     },
     {
       id: 8,
-      title: 'Private Sommelier Tasting Lounge',
-      category: 'Dining',
-      image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1000&q=80',
-      desc: 'Custom wine cellar lounge designed for intimate, quiet gatherings.'
+      brand: 'S Conventions',
+      state: 'Telangana',
+      city: 'Karmanghat',
+      space: '2,000 sqft',
+      future: 'Signed with MAX and DIY',
+      image: 'https://content3.jdmagicbox.com/v2/comp/hyderabad/c1/040pxx40.xx40.180420185204.s9c1/catalogue/s-convention-hall-karmanghat-hyderabad-convention-halls-f1kqnupe0a.jpg'
+    },
+    {
+      id: 9,
+      brand: 'Max & DIY (Upcoming)',
+      state: 'Telangana',
+      city: 'Karmanghat',
+      future: 'Signed with MAX and DIY',
+      image: ''
+    },
+    {
+      id: 10,
+      brand: 'Unlimited',
+      state: 'Andhra Pradesh',
+      city: 'Srikakulam',
+      space: '7,000 sqft',
+      image: ' https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxqvoW-FT6514lBRqLZi0JRK1VGksGRft45GDUknq7KA&s'
+    },
+    {
+      id: 11,
+      brand: 'Kalyan Jewellers',
+      state: 'Andhra Pradesh',
+      city: 'Vizianagaram',
+      space: '17,000 sqft',
+      image: 'https://content.jdmagicbox.com/v2/comp/jharsuguda/p5/9999p6645.6645.250227054321.k2p5/catalogue/kalyan-jewellers-marwari-para-jharsuguda-jewellery-showrooms-bprtxmz6tp.jpg'
     }
   ];
 
-  const filteredImages = selectedCategory === 'All' 
-    ? images 
-    : images.filter(img => img.category === selectedCategory);
+  const filters = ['All', 'Andhra Pradesh', 'Telangana'];
+
+  const filteredProjects = selectedFilter === 'All'
+    ? projects
+    : projects.filter(p => p.state === selectedFilter);
 
   return (
-    <div className="pt-20">
+    <div className="pt-20 bg-[#FBF8F2] min-h-screen text-[#14171F]">
       
-      {/* Header */}
-      <section className="bg-[#001849] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+      {/* Header Banner */}
+      <section className="bg-[#001849] text-white py-20 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl relative z-10 space-y-4">
           <div className="eyebrow justify-center text-[#F5A623]">
-            <span>Visual Showcase</span>
+            <span>Indus & Arrow Portfolio</span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold font-serif mb-4">
-            Arrow Hotels Photo Gallery
+          <h1 className="text-4xl md:text-6xl font-serif font-bold text-white tracking-tight">
+            Commercial Project Gallery
           </h1>
-          <p className="text-white/80 text-base md:text-lg">
-            Explore our presidential suites, architectural details, fine dining lounges, and universal accessibility features.
+          <p className="text-white/85 text-base md:text-lg font-serif max-w-2xl mx-auto leading-relaxed">
+            Explore our completed and upcoming retail, commercial, and anchor brand properties across Andhra Pradesh and Telangana.
           </p>
         </div>
       </section>
 
-      {/* Filter Tabs */}
-      <section className="py-12 bg-[#F1ECE0] border-b border-[#14171F]/10 sticky top-20 z-30 backdrop-blur-md bg-[#F1ECE0]/90">
+      {/* Filter Bar */}
+      <section className="py-8 bg-[#FBF8F2] border-b border-stone-200 sticky top-20 z-30 backdrop-blur-md bg-[#FBF8F2]/90">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center gap-2 flex-wrap">
-            <span className="font-mono-code text-xs text-[#6B6E7A] uppercase mr-2 flex items-center gap-1">
-              <Filter className="w-3.5 h-3.5" /> Filter:
+          <div className="flex items-center justify-center gap-3 flex-wrap">
+            <span className="font-mono-code text-xs text-[#6B6E7A] uppercase mr-2 flex items-center gap-1.5 font-bold">
+              <Filter className="w-4 h-4 text-[#E85D25]" /> Filter Region:
             </span>
-            {categories.map((cat) => (
+            {filters.map((filter) => (
               <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`font-mono-code text-xs uppercase tracking-wider px-4 py-2 transition-all ${
-                  selectedCategory === cat
-                    ? 'bg-[#00287A] text-[#F5A623] font-bold shadow-md'
-                    : 'bg-white text-[#14171F] hover:bg-[#E85D25] hover:text-white'
+                key={filter}
+                onClick={() => setSelectedFilter(filter)}
+                className={`font-mono-code text-xs uppercase tracking-wider px-5 py-2.5 rounded-lg transition-all font-bold ${
+                  selectedFilter === filter
+                    ? 'bg-[#001849] text-[#F5A623] shadow-md'
+                    : 'bg-white text-[#14171F] border border-stone-200 hover:border-[#E85D25] hover:text-[#E85D25]'
                 }`}
               >
-                {cat}
+                {filter}
               </button>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Image Grid */}
+      {/* Project Cards Grid */}
       <section className="py-16 bg-[#FBF8F2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredImages.map((img) => (
+            {filteredProjects.map((item) => (
               <div 
-                key={img.id}
-                onClick={() => setActiveImage(img)}
-                className="bg-white border border-[#14171F]/10 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 group cursor-pointer"
+                key={item.id}
+                onClick={() => setActiveProject(item)}
+                className="bg-white border border-stone-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col justify-between"
               >
-                <div className="relative h-64 overflow-hidden">
-                  <img 
-                    src={img.image} 
-                    alt={img.title} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-[#001849]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white gap-2">
+                {/* Photo Header */}
+                <div className="relative h-64 overflow-hidden bg-stone-100 flex items-center justify-center">
+                  {item.image ? (
+                    <img 
+                      src={item.image} 
+                      alt={item.brand}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-[#001849]/5 flex flex-col items-center justify-center p-6 text-center text-[#001849]/60">
+                      <Building className="w-12 h-12 text-[#E85D25] mb-2" />
+                      <span className="font-serif font-bold text-sm text-[#001849]">{item.brand}</span>
+                      <span className="font-mono-code text-[11px] text-[#6B6E7A] mt-1">{item.city}</span>
+                    </div>
+                  )}
+                  
+                  {/* Hover Overlay Prompt */}
+                  <div className="absolute inset-0 bg-[#001849]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white gap-2">
                     <ZoomIn className="w-8 h-8 text-[#F5A623]" />
-                    <span className="font-mono-code text-xs uppercase tracking-wider">Expand Photo</span>
+                    <span className="font-mono-code text-xs uppercase tracking-wider font-bold">View Full Project Details</span>
                   </div>
-                  <span className="absolute top-3 left-3 bg-[#001849] text-[#F5A623] font-mono-code text-[10px] uppercase tracking-wider px-2.5 py-1">
-                    {img.category}
+
+                  {/* Location Badge */}
+                  <span className="absolute top-3 left-3 bg-[#001849] text-[#F5A623] font-mono-code text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-sm font-bold border border-white/10">
+                    {item.state}
                   </span>
                 </div>
-                <div className="p-5">
-                  <h3 className="font-serif text-lg font-bold text-[#001849] mb-1">
-                    {img.title}
-                  </h3>
-                  <p className="text-xs text-[#6B6E7A] line-clamp-2">
-                    {img.desc}
-                  </p>
+
+                {/* Card Footer: Brand Name Visible Under Image */}
+                <div className="p-6 bg-white flex items-center justify-between border-t border-stone-100">
+                  <div>
+                    <span className="font-mono-code text-[10px] text-[#E85D25] font-bold uppercase tracking-wider block mb-0.5">
+                      Brand Partner
+                    </span>
+                    <h3 className="font-serif text-xl font-bold text-[#001849] capitalize">
+                      {item.brand}
+                    </h3>
+                  </div>
+
+                  <div className="w-9 h-9 rounded-full bg-[#FBF8F2] text-[#001849] group-hover:bg-[#E85D25] group-hover:text-white flex items-center justify-center transition-colors">
+                    <Maximize2 className="w-4 h-4" />
+                  </div>
                 </div>
               </div>
             ))}
@@ -150,33 +207,128 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* Lightbox Modal */}
-      {activeImage && (
-        <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 backdrop-blur-md">
-          <div className="relative max-w-4xl w-full bg-[#001849] text-white border border-white/20 shadow-2xl overflow-hidden">
+      {/* Lightbox / Details Modal */}
+      {activeProject && (
+        <div 
+          className="fixed inset-0 z-50 bg-[#001849]/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto animate-fadeIn"
+          onClick={() => setActiveProject(null)}
+        >
+          <div 
+            className="relative max-w-2xl w-full bg-white text-[#14171F] rounded-2xl shadow-2xl overflow-hidden border border-stone-200 my-8"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
             <button 
-              onClick={() => setActiveImage(null)}
-              className="absolute top-4 right-4 z-10 p-2 bg-[#E85D25] text-white hover:bg-[#F5A623] hover:text-[#001849] transition-colors"
+              onClick={() => setActiveProject(null)}
+              className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-[#001849]/80 text-white hover:bg-[#E85D25] transition-colors shadow-lg"
+              aria-label="Close details"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5" />
             </button>
-            <div className="max-h-[70vh] overflow-hidden bg-black">
-              <img 
-                src={activeImage.image} 
-                alt={activeImage.title} 
-                className="w-full h-full object-contain max-h-[70vh] mx-auto"
-              />
+
+            {/* Photo Banner */}
+            <div className="relative h-72 sm:h-80 bg-stone-900 overflow-hidden flex items-center justify-center">
+              {activeProject.image ? (
+                <img 
+                  src={activeProject.image} 
+                  alt={activeProject.brand} 
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="w-full h-full bg-[#001849] flex flex-col items-center justify-center p-8 text-center text-white">
+                  <Building className="w-16 h-16 text-[#F5A623] mb-3" />
+                  <div className="font-serif font-bold text-2xl text-white">{activeProject.brand}</div>
+                  <div className="font-mono-code text-xs text-white/70 mt-1">{activeProject.city}, {activeProject.state}</div>
+                </div>
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#001849] via-transparent to-transparent opacity-80" />
+              
+              <div className="absolute bottom-6 left-6 right-6 text-white">
+                <span className="font-mono-code text-xs text-[#F5A623] uppercase tracking-widest block mb-1 font-bold">
+                  {activeProject.state} Real Estate
+                </span>
+                <h3 className="font-serif text-3xl font-bold capitalize text-white">
+                  {activeProject.brand}
+                </h3>
+              </div>
             </div>
-            <div className="p-6 bg-[#001849]">
-              <span className="font-mono-code text-xs text-[#F5A623] uppercase tracking-widest block mb-1">
-                {activeImage.category} Sector
-              </span>
-              <h3 className="font-serif text-2xl font-bold mb-2">
-                {activeImage.title}
-              </h3>
-              <p className="text-sm text-white/80">
-                {activeImage.desc}
-              </p>
+
+            {/* Complete Project Details Content */}
+            <div className="p-6 sm:p-8 space-y-6 bg-white">
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                
+                {/* Brand Name */}
+                <div className="p-4 bg-[#FBF8F2] rounded-xl border border-stone-200">
+                  <div className="flex items-center gap-2 text-xs font-mono-code text-[#E85D25] uppercase font-bold mb-1">
+                    <Tag className="w-4 h-4" /> Brand Partner
+                  </div>
+                  <div className="font-serif font-bold text-lg text-[#001849] capitalize">
+                    {activeProject.brand}
+                  </div>
+                </div>
+
+                {/* Location City */}
+                <div className="p-4 bg-[#FBF8F2] rounded-xl border border-stone-200">
+                  <div className="flex items-center gap-2 text-xs font-mono-code text-[#E85D25] uppercase font-bold mb-1">
+                    <MapPin className="w-4 h-4" /> Location / City
+                  </div>
+                  <div className="font-serif font-bold text-base text-[#001849]">
+                    {activeProject.city}, {activeProject.state}
+                  </div>
+                </div>
+
+                {/* Space Sqft */}
+                {activeProject.space && (
+                  <div className="p-4 bg-[#FBF8F2] rounded-xl border border-stone-200">
+                    <div className="flex items-center gap-2 text-xs font-mono-code text-[#E85D25] uppercase font-bold mb-1">
+                      <Maximize2 className="w-4 h-4" /> Total Space Area
+                    </div>
+                    <div className="font-serif font-bold text-lg text-[#001849]">
+                      {activeProject.space}
+                    </div>
+                  </div>
+                )}
+
+                {/* Developer */}
+                {activeProject.developer && (
+                  <div className="p-4 bg-[#FBF8F2] rounded-xl border border-stone-200">
+                    <div className="flex items-center gap-2 text-xs font-mono-code text-[#E85D25] uppercase font-bold mb-1">
+                      <Building className="w-4 h-4" /> Developer Partner
+                    </div>
+                    <div className="font-serif font-bold text-base text-[#001849]">
+                      {activeProject.developer}
+                    </div>
+                  </div>
+                )}
+
+              </div>
+
+              {/* Future Agreement Note if applicable */}
+              {activeProject.future && (
+                <div className="p-4 bg-orange-50 border border-orange-200 rounded-xl flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-[#E85D25] shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-mono-code text-xs font-bold text-[#E85D25] uppercase">
+                      Upcoming / Expansion Status
+                    </div>
+                    <div className="font-serif text-sm font-semibold text-[#001849] mt-0.5">
+                      {activeProject.future}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Close Button */}
+              <div className="pt-2 flex justify-end">
+                <button
+                  onClick={() => setActiveProject(null)}
+                  className="px-6 py-2.5 bg-[#001849] text-white font-mono-code text-xs font-bold uppercase tracking-wider rounded-lg hover:bg-[#E85D25] transition-colors shadow"
+                >
+                  Close Details
+                </button>
+              </div>
+
             </div>
           </div>
         </div>
