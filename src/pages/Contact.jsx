@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, ChevronDown, Clock, ShieldCheck } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, ChevronDown, Clock, ShieldCheck, ArrowRight } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -249,6 +249,59 @@ export default function Contact() {
 
           </div>
 
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* INTERACTIVE GOOGLE MAPS LOCATION SECTION */}
+      {/* ========================================================================= */}
+      <section className="py-16 bg-white border-t border-[#14171F]/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
+            <div className="eyebrow justify-center text-[#E85D25]">
+              <span>Visit Our Corporate Office</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#001849]">
+              Find Us On Google Maps
+            </h2>
+            <p className="text-xs sm:text-sm font-mono-code text-[#6B6E7A]">
+              Plot no: 501, Second floor-202, Teachers colony, Phase 2, BN Reddy Nagar, Hyderabad - 500070
+            </p>
+          </div>
+
+          <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-[#FBF8F2] relative h-[480px] group">
+            <iframe
+              title="Indus Group Corporate Headquarters Location Map"
+              src="https://maps.google.com/maps?q=Teachers+colony+Phase+2+BN+Reddy+Nagar+Hyderabad+500070&t=&z=17&ie=UTF8&iwloc=B&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-full"
+            />
+            <div className="absolute bottom-6 left-6 bg-[#001849]/95 backdrop-blur-md text-white p-5 rounded-2xl border border-white/20 shadow-xl max-w-md hidden sm:flex items-center gap-3 z-10">
+              <MapPin className="w-6 h-6 text-[#F5A623] shrink-0" />
+              <div>
+                <span className="font-mono-code text-[11px] text-[#F5A623] font-bold uppercase tracking-wider block mb-0.5">
+                  Indus Group Corporate Office
+                </span>
+                <p className="text-xs text-white/90 font-sans leading-snug">
+                  Plot no: 501, Second floor-202, Teachers colony, Phase 2, BN Reddy Nagar, Hyderabad - 500070
+                </p>
+                <a
+                  href="https://maps.google.com/?q=Teachers+colony+Phase+2+BN+Reddy+Nagar+Hyderabad+500070"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-[11px] font-mono-code font-bold text-[#F5A623] hover:text-white mt-2 transition-colors group/link"
+                >
+                  <span>Open in Google Maps / Get Directions</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

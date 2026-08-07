@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, Heart, Award, ArrowRight, CheckCircle2, Users, Compass, Sparkles, X, Mail, Phone, Grid, Layers, Building2, ShoppingBag, Utensils, Footprints } from 'lucide-react';
+import BrandLogo from '../components/BrandLogo';
+import { ShieldCheck, Heart, Award, ArrowRight, CheckCircle2, Users, Compass, Sparkles, X, Mail, Phone, Grid, Layers, Building2, ShoppingBag, Utensils, Footprints, Globe, Hotel } from 'lucide-react';
 
 export default function About() {
   const [showBioModal, setShowBioModal] = useState(false);
@@ -44,6 +45,22 @@ export default function About() {
     ]
   };
 
+  // Hotels Brands (Arrow Hotels, Taj, Accor, Lemon Tree, Mahindra Holidays, Click Hotels)
+  const hotelLogos = [
+    { name: 'Taj Hotels', logo: '/logos/hotels/taj.png', category: 'Hotels' },
+    { name: 'Accor Hotels', logo: '/logos/hotels/accor.svg', category: 'Hotels' },
+    { name: 'Lemon Tree Hotels', logo: '/logos/hotels/lemon tree.png', category: 'Hotels' },
+    { name: 'Mahindra Holidays', logo: '/logos/hotels/mahindra holidays.svg', category: 'Hotels' },
+    { name: 'Click Hotels', logo: '/logos/hotels/click hotels.png', category: 'Hotels' }
+  ];
+
+  // Jewellers Brands (Joyalukkas, Kalyan Jewellers, Malabar Gold & Diamonds)
+  const jewelleryLogos = [
+    { name: 'Joyalukkas', logo: '/logos/Jewellers/joyalukkas-logo-png_seeklogo-228688.png', category: 'Jewellers' },
+    { name: 'Kalyan Jewellers', logo: '/logos/Jewellers/kalyan-jewellers.jpg', category: 'Jewellers' },
+    { name: 'Malabar Gold & Diamonds', logo: '/logos/Jewellers/malabar.jpg', category: 'Jewellers' }
+  ];
+
   // Anchor Brands (10 files: Picture1.png to Picture10.png)
   const anchorLogos = Array.from({ length: 10 }, (_, i) => ({
     name: `Anchor Partner ${i + 1}`,
@@ -73,6 +90,22 @@ export default function About() {
   }));
 
   const brandCategories = [
+    {
+      id: 'hotels',
+      title: 'Hotels & Hospitality',
+      description: 'Luxury, business, and mid-scale hotel brands and resort chains',
+      badge: 'Hotels',
+      icon: Hotel,
+      brands: hotelLogos
+    },
+    {
+      id: 'jewellers',
+      title: 'Jewellers & Fine Luxury',
+      description: 'Premier national and international gold, diamond & fine jewellery brands',
+      badge: 'Jewellers',
+      icon: Sparkles,
+      brands: jewelleryLogos
+    },
     {
       id: 'anchor',
       title: 'Anchor Brands',
@@ -115,91 +148,166 @@ export default function About() {
     <div className="pt-20">
 
       {/* Hero Banner */}
-      <section className="bg-[#001849] text-white py-20 relative overflow-hidden">
+      <section className="bg-[#001849] text-white py-16 md:py-24 relative overflow-hidden">
+        {/* Background glow accents */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#F5A623]/10 rounded-full blur-3xl pointer-events-none -z-0"></div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="eyebrow text-[#F5A623]">
-            <span>Our Purpose & History</span>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            
+            {/* Left Content Column */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="eyebrow text-[#F5A623]">
+                <span>Our Purpose & History</span>
+              </div>
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-serif text-white leading-tight">
+                Redefining Luxury Through Inclusivity.
+              </h1>
+              <p className="text-base sm:text-lg text-white/85 max-w-2xl font-sans leading-relaxed">
+                Arrow Hotels was established with a singular vision: to dismantle the false boundary between high-end architectural luxury and total physical accessibility.
+              </p>
+            </div>
+
+            {/* Right Column: Arrow Hotels Brand Logo Card */}
+            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+              <div className="p-7 sm:p-9 rounded-3xl bg-white/10 border border-white/20 shadow-2xl backdrop-blur-md hover:border-[#F5A623] transition-all duration-300 transform hover:scale-105">
+                <BrandLogo
+                  variant="dark"
+                  size="lg"
+                  title="ARROW HOTELS"
+                  subtitle="(Unit of Indus Group)"
+                  to="/services/hospitality"
+                />
+              </div>
+            </div>
+
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold font-serif max-w-3xl mb-6">
-            Redefining Luxury Through Inclusivity.
-          </h1>
-          <p className="text-lg text-white/80 max-w-2xl font-sans leading-relaxed">
-            Arrow Hotels was established with a singular vision: to dismantle the false boundary between high-end architectural luxury and total physical accessibility.
-          </p>
         </div>
       </section>
 
-      {/* Main Story & Heritage */}
-      <section className="py-20 bg-[#FBF8F2]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-            <div>
-              <div className="eyebrow">
+      {/* ========================================================================= */}
+      {/* MAIN STORY, HERITAGE & LEADERSHIP (WARM LUXURY LIGHT THEME) */}
+      {/* ========================================================================= */}
+      <section className="py-20 md:py-28 bg-[#FBF8F2] text-[#14171F] relative overflow-hidden border-t border-[#14171F]/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          
+          {/* LEGACY & BRAND STORY GRID */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-24">
+            
+            {/* Left Column: Brand Story & Narrative */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="inline-flex items-center gap-2 text-[11px] font-mono-code font-bold uppercase tracking-[0.2em] text-[#E85D25] bg-[#E85D25]/10 px-3.5 py-1.5 rounded-full border border-[#E85D25]/20">
+                <Sparkles className="w-3.5 h-3.5 text-[#E85D25]" />
                 <span>The Arrow Hotels Legacy</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#001849] mb-6">
-                Back by the Indus Group's Heritage of Excellence
-              </h2>
-              <p className="text-[#14171F]/80 text-base leading-relaxed mb-6">
-                Arrow Hotels is the hospitality brand of Indus Group, built to redefine modern hospitality through a blend of comfort, innovation, and personalized service. We create guest experiences that combine luxury, convenience, and cultural authenticity — while maintaining global standards of excellence.
-              </p>
 
-              <div className="mb-6 space-y-2">
-                <p className="font-semibold text-[#001849] text-base mb-3">
-                  Our approach is guided by five principles:
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#001849] leading-tight">
+                Backed by Arrow Hotels Heritage of Excellence
+              </h2>
+
+              <div className="space-y-4 text-[#14171F]/80 text-base sm:text-lg leading-relaxed font-sans">
+                <p className="border-l-4 border-[#E85D25] pl-4 italic text-[#001849] font-medium">
+                  Pioneering comfortable hospitality, Arrow Hotels is a mid-scale hotel brand thoughtfully designed to meet the needs of regional business travelers, leisure guests, and families.
                 </p>
-                <ul className="space-y-2.5 text-[#14171F]/85 text-sm sm:text-base leading-relaxed">
-                  <li className="flex items-start gap-2.5">
-                    <span className="text-[#E85D25] font-bold">•</span>
-                    <span><strong>Guest-centric excellence</strong> — tailored services, modern technology, and unique stays</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="text-[#E85D25] font-bold">•</span>
-                    <span><strong>Sustainable growth</strong> — eco-friendly practices and responsible operations</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="text-[#E85D25] font-bold">•</span>
-                    <span><strong>Local & global integration</strong> — reflecting each destination's culture while holding global quality standards</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="text-[#E85D25] font-bold">•</span>
-                    <span><strong>Strategic expansion</strong> — growing into the right markets at the right pace</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="text-[#E85D25] font-bold">•</span>
-                    <span><strong>Partner & investor value</strong> — financially disciplined, high-return business models</span>
-                  </li>
-                </ul>
+                <p>
+                  Combining modern amenities with warm, personalized service, our hotels provide the perfect balance of comfort, convenience, and affordability — ensuring every visit feels effortless and rewarding. Every stay is crafted to deliver a genuine <span className="text-[#E85D25] font-semibold">“home away from home”</span> experience.
+                </p>
               </div>
 
-              {/* Learn More Option Redirecting to Dedicated Arrow Hotels Page */}
+              {/* 5 Principles Grid Cards */}
+              <div className="pt-4">
+                <h3 className="text-xs font-mono-code uppercase tracking-wider text-[#E85D25] font-bold mb-4 flex items-center gap-2">
+                  <Award className="w-4 h-4" />
+                  <span>Our 5 Core Operating Principles</span>
+                </h3>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="bg-white border border-[#14171F]/10 p-4 rounded-xl shadow-sm hover:shadow-md hover:border-[#E85D25] transition-all flex items-start gap-3 group">
+                    <CheckCircle2 className="w-4 h-4 text-[#E85D25] shrink-0 mt-0.5" />
+                    <div>
+                      <span className="text-xs font-bold text-[#001849] block">Guest-Centric Excellence</span>
+                      <span className="text-[11px] text-[#6B6E7A]">Tailored services & modern technology</span>
+                    </div>
+                  </div>
+
+                  <div className="bg-white border border-[#14171F]/10 p-4 rounded-xl shadow-sm hover:shadow-md hover:border-[#E85D25] transition-all flex items-start gap-3 group">
+                    <Sparkles className="w-4 h-4 text-[#E85D25] shrink-0 mt-0.5" />
+                    <div>
+                      <span className="text-xs font-bold text-[#001849] block">Sustainable Growth</span>
+                      <span className="text-[11px] text-[#6B6E7A]">Eco-friendly practices & green operations</span>
+                    </div>
+                  </div>
+
+                  <div className="bg-white border border-[#14171F]/10 p-4 rounded-xl shadow-sm hover:shadow-md hover:border-[#E85D25] transition-all flex items-start gap-3 group">
+                    <Globe className="w-4 h-4 text-[#00287A] shrink-0 mt-0.5" />
+                    <div>
+                      <span className="text-xs font-bold text-[#001849] block">Local & Global Integration</span>
+                      <span className="text-[11px] text-[#6B6E7A]">Cultural depth with global quality standards</span>
+                    </div>
+                  </div>
+
+                  <div className="bg-white border border-[#14171F]/10 p-4 rounded-xl shadow-sm hover:shadow-md hover:border-[#E85D25] transition-all flex items-start gap-3 group">
+                    <Compass className="w-4 h-4 text-[#E85D25] shrink-0 mt-0.5" />
+                    <div>
+                      <span className="text-xs font-bold text-[#001849] block">Strategic Market Expansion</span>
+                      <span className="text-[11px] text-[#6B6E7A]">Disciplined growth in high-yield hubs</span>
+                    </div>
+                  </div>
+
+                  <div className="sm:col-span-2 bg-white border border-[#14171F]/10 p-4 rounded-xl shadow-sm hover:shadow-md hover:border-[#E85D25] transition-all flex items-start gap-3 group">
+                    <Award className="w-4 h-4 text-[#E85D25] shrink-0 mt-0.5" />
+                    <div>
+                      <span className="text-xs font-bold text-[#001849] block">Partner & Investor Value</span>
+                      <span className="text-[11px] text-[#6B6E7A]">Financially disciplined, high-return business models</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Link */}
               <div className="pt-2">
                 <Link
                   to="/arrow-hotels"
-                  className="inline-flex items-center gap-2 font-mono-code text-xs uppercase tracking-wider px-7 py-3.5 bg-[#001849] text-white font-bold hover:bg-[#00287A] transition-all rounded-lg shadow-md group"
+                  className="inline-flex items-center gap-3 font-mono-code text-xs uppercase tracking-wider px-8 py-4 bg-[#001849] text-white font-bold hover:bg-[#E85D25] transition-all rounded-xl shadow-lg group"
                 >
-                  <span>Learn More About Arrow Hotels</span>
+                  <span>Explore Arrow Hotels Sector Page</span>
                   <ArrowRight className="w-4 h-4 text-[#F5A623] group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              <img
-                src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80"
-                alt="Hotel Suite interior"
-                className="w-full h-64 object-cover shadow-lg"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=600&q=80"
-                alt="Luxury Hotel Lobby"
-                className="w-full h-64 object-cover shadow-lg mt-8"
-              />
+            {/* Right Column: Staggered Image Gallery */}
+            <div className="lg:col-span-5 relative">
+              <div className="relative z-10 space-y-6">
+                <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white group">
+                  <img
+                    src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80"
+                    alt="Arrow Hotels Luxury Room Interior"
+                    className="w-full h-64 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="p-4 bg-white border-t border-[#14171F]/10">
+                    <span className="text-xs font-serif italic text-[#001849] font-bold">Modern Guest Suites & Executive Care</span>
+                  </div>
+                </div>
+
+                <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white group ml-6 sm:ml-10 -mt-10">
+                  <img
+                    src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80"
+                    alt="Arrow Hotels Architectural Entrance"
+                    className="w-full h-56 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="p-4 bg-white border-t border-[#14171F]/10 flex items-center justify-between">
+                    <span className="text-xs font-mono-code text-[#001849] font-bold">Regional Hospitality Landmark</span>
+                    <Sparkles className="w-4 h-4 text-[#E85D25]" />
+                  </div>
+                </div>
+              </div>
             </div>
+
           </div>
 
           {/* Leadership Team */}
-          <div>
+          <div className="pt-16 border-t border-[#14171F]/10">
             <div className="text-center max-w-3xl mx-auto mb-14">
               <div className="eyebrow justify-center">
                 <span>Visionary Leadership</span>
@@ -274,8 +382,8 @@ export default function About() {
               <h2 className="text-3xl md:text-4xl font-bold text-[#001849]">
                 Trusted Brand Network
               </h2>
-              <p className="text-sm text-[#14171F]/70 max-w-2xl mt-2">
-                Showcasing our esteemed clients spanning Anchor Brands, Apparel Brands, Footwear, and Food & Beverage outlets.
+              <p className="text-white/80 text-sm sm:text-base font-sans max-w-xl font-light">
+                Showcasing our esteemed clients spanning Jewellers, Anchor Brands, Apparel Brands, Footwear, and Food & Beverage outlets.
               </p>
             </div>
 
@@ -375,7 +483,7 @@ export default function About() {
 
             {/* Category Filter Tabs */}
             <div className="bg-[#FBF8F2] px-6 py-3 border-b border-[#14171F]/10 flex items-center gap-2 overflow-x-auto">
-              {['All', 'Anchor Brands', 'Apparel Brands', 'Footwear', 'Food Brands'].map((tab) => (
+              {['All', 'Hotels', 'Jewellers', 'Anchor Brands', 'Apparel Brands', 'Footwear', 'Food Brands'].map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setSelectedBrandCategory(tab)}
@@ -518,12 +626,13 @@ export default function About() {
   );
 }
 
-// Brand Logo Card Component with Automatic Fallback for Missing Files
+// Brand Logo Card Component with Automatic Fallback for Missing Files & High Contrast Support
 function BrandLogoCard({ brand }) {
   const [imgError, setImgError] = useState(false);
+  const isDarkLogo = brand.category === 'Hotels' || brand.logo?.includes('/hotels/') || brand.name?.toLowerCase().includes('lemon') || brand.name?.toLowerCase().includes('accor') || brand.name?.toLowerCase().includes('mahindra');
 
   return (
-    <div className="shrink-0 w-48 bg-white border border-[#14171F]/10 rounded-xl p-3 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-all hover:border-[#E85D25] group/brand h-24">
+    <div className={`shrink-0 w-48 border border-[#14171F]/10 rounded-xl p-3 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-all hover:border-[#E85D25] group/brand h-24 ${isDarkLogo ? 'bg-[#001849]' : 'bg-white'}`}>
       {!imgError ? (
         <img
           src={brand.logo}
@@ -533,10 +642,10 @@ function BrandLogoCard({ brand }) {
         />
       ) : (
         <div className="flex flex-col items-center gap-1">
-          <div className="w-9 h-9 rounded-lg bg-[#001849]/5 text-[#001849] flex items-center justify-center font-serif font-bold text-sm border border-[#001849]/10">
+          <div className={`w-9 h-9 rounded-lg flex items-center justify-center font-serif font-bold text-sm border ${isDarkLogo ? 'bg-white/10 text-white border-white/20' : 'bg-[#001849]/5 text-[#001849] border-[#001849]/10'}`}>
             {brand.name.charAt(0)}
           </div>
-          <span className="font-serif font-bold text-[11px] text-[#001849] text-center line-clamp-1">
+          <span className={`font-serif font-bold text-[11px] text-center line-clamp-1 ${isDarkLogo ? 'text-white' : 'text-[#001849]'}`}>
             {brand.name}
           </span>
         </div>

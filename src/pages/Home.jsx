@@ -43,6 +43,44 @@ export default function Home() {
     }
   };
 
+  // Partner Brand Logos Data Arrays for Scrolling Marquee
+  const hotelLogos = [
+    { name: 'Taj Hotels', logo: '/logos/hotels/taj.png' },
+    { name: 'Accor Hotels', logo: '/logos/hotels/accor.svg' },
+    { name: 'Lemon Tree Hotels', logo: '/logos/hotels/lemon tree.png' },
+    { name: 'Mahindra Holidays', logo: '/logos/hotels/mahindra holidays.svg' },
+    { name: 'Click Hotels', logo: '/logos/hotels/click hotels.png' }
+  ];
+
+  const jewelleryLogos = [
+    { name: 'Joyalukkas', logo: '/logos/Jewellers/joyalukkas-logo-png_seeklogo-228688.png' },
+    { name: 'Kalyan Jewellers', logo: '/logos/Jewellers/kalyan-jewellers.jpg' },
+    { name: 'Malabar Gold & Diamonds', logo: '/logos/Jewellers/malabar.jpg' }
+  ];
+
+  const anchorLogos = Array.from({ length: 10 }, (_, i) => ({
+    name: `Anchor Partner ${i + 1}`,
+    logo: `/logos/Anchor_Brands/Picture${i + 1}.png`
+  }));
+
+  const apparelLogos = Array.from({ length: 45 }, (_, i) => ({
+    name: `Apparel Partner ${i + 1}`,
+    logo: `/logos/Apparel_Brands/Picture${i + 11}.png`
+  }));
+
+  const footwearLogos = Array.from({ length: 12 }, (_, i) => ({
+    name: `Footwear Partner ${i + 1}`,
+    logo: `/logos/Footware/Picture${i + 56}.png`
+  }));
+
+  const foodLogos = Array.from({ length: 21 }, (_, i) => ({
+    name: `Food Partner ${i + 1}`,
+    logo: `/logos/Food/Picture${i + 72}.png`
+  }));
+
+  const allBrands = [...hotelLogos, ...jewelleryLogos, ...anchorLogos, ...apparelLogos, ...footwearLogos, ...foodLogos];
+  const marqueeBrands = [...allBrands, ...allBrands];
+
   // 3 Key Stat Cards data
   const statCards = [
     {
@@ -226,6 +264,43 @@ export default function Home() {
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* BRAND LOGOS SCROLLING MARQUEE (TRUSTED BRAND NETWORK) */}
+      {/* ========================================================================= */}
+      <section className="py-8 bg-[#FBF8F2] border-b border-[#14171F]/10 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <div className="inline-flex items-center gap-2 text-[11px] font-mono-code font-bold uppercase tracking-widest text-[#E85D25]">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Trusted Brand Network</span>
+            </div>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-[#001849] mt-1">
+              Brands & Retail Outlets We Work With
+            </h2>
+          </div>
+
+          {/* <Link
+            to="/about"
+            className="inline-flex items-center gap-2 font-mono-code text-xs uppercase tracking-wider bg-[#001849] text-white px-5 py-2.5 rounded-lg hover:bg-[#E85D25] font-bold transition-all shadow shrink-0 group"
+          >
+            <span>View Category Details</span>
+            <ArrowRight className="w-4 h-4 text-[#F5A623] group-hover:translate-x-1 transition-transform" />
+          </Link> */}
+        </div>
+
+        {/* Infinite Marquee Stream */}
+        <div className="relative w-full overflow-hidden py-5 bg-white border-y border-[#14171F]/10">
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
+          <div className="animate-marquee flex gap-6 px-4">
+            {marqueeBrands.map((brand, idx) => (
+              <BrandLogoCard key={idx} brand={brand} />
+            ))}
           </div>
         </div>
       </section>
@@ -638,13 +713,36 @@ export default function Home() {
             onClick={scrollToArrowHotels}
             className="cursor-pointer bg-[#001849] text-white p-3.5 sm:p-4 rounded-2xl border-2 border-[#F5A623] shadow-2xl hover:scale-105 transition-transform flex items-center gap-3 relative group"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#F5A623] to-[#E85D25] flex items-center justify-center text-[#001849] font-bold shrink-0">
-              <Hotel className="w-5 h-5" />
+            <div className="w-10 h-10 rounded-xl bg-[#001233] border border-[#F5A623]/40 flex items-center justify-center p-1.5 shrink-0 shadow-md">
+              <svg viewBox="0 0 200 135" fill="none" className="w-7 h-7">
+                <defs>
+                  <linearGradient id="arrowTopNotice" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#FFDC00" />
+                    <stop offset="45%" stopColor="#FF8800" />
+                    <stop offset="100%" stopColor="#E85D25" />
+                  </linearGradient>
+                  <linearGradient id="arrowBottomNotice" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#FF6000" />
+                    <stop offset="60%" stopColor="#D93B00" />
+                    <stop offset="100%" stopColor="#9E1B00" />
+                  </linearGradient>
+                </defs>
+                <g transform="translate(10, 5)">
+                  <polygon points="10,110 180,5 118,78" fill="url(#arrowTopNotice)" />
+                  <polygon points="118,78 180,5 142,125" fill="url(#arrowBottomNotice)" />
+                </g>
+              </svg>
             </div>
             <div>
               <div className="flex items-center gap-1.5 text-[10px] font-mono-code uppercase tracking-wider text-[#F5A623] font-bold">
                 <span>Arrow Hotels</span>
-                <span className="w-2 h-2 rounded-full bg-[#E85D25] animate-ping"></span>
+                <img
+                  src="/registered-trademark.png"
+                  alt="Registered Trademark"
+                  className="h-4 sm:h-4.5 w-auto object-contain shrink-0 opacity-90 inline-block"
+                  title="Registered Trademark"
+                />
+                <span className="w-2 h-2 rounded-full bg-[#E85D25] animate-ping ml-0.5"></span>
               </div>
               <div className="font-serif font-bold text-xs sm:text-sm text-white group-hover:text-[#F5A623] transition-colors flex items-center gap-1">
                 <span>Unit of Indus Group</span>
@@ -665,7 +763,34 @@ export default function Home() {
           </div>
         </div>
       )}
+    </div>
+  );
+}
 
+// Brand Logo Card Component with Automatic Fallback for Missing Files & High Contrast Support
+function BrandLogoCard({ brand }) {
+  const [imgError, setImgError] = useState(false);
+  const isDarkLogo = brand.category === 'Hotels' || brand.logo?.includes('/hotels/') || brand.name?.toLowerCase().includes('lemon') || brand.name?.toLowerCase().includes('accor') || brand.name?.toLowerCase().includes('mahindra');
+
+  return (
+    <div className={`shrink-0 w-44 sm:w-48 border border-[#14171F]/10 rounded-xl p-3 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-all hover:border-[#E85D25] group/brand h-22 sm:h-24 ${isDarkLogo ? 'bg-[#001849]' : 'bg-white'}`}>
+      {!imgError ? (
+        <img
+          src={brand.logo}
+          alt={brand.name}
+          onError={() => setImgError(true)}
+          className="h-12 sm:h-14 w-auto object-contain max-w-[140px] group-hover/brand:scale-105 transition-transform"
+        />
+      ) : (
+        <div className="flex flex-col items-center gap-1">
+          <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-serif font-bold text-xs border ${isDarkLogo ? 'bg-white/10 text-white border-white/20' : 'bg-[#001849]/5 text-[#001849] border-[#001849]/10'}`}>
+            {brand.name.charAt(0)}
+          </div>
+          <span className={`font-serif font-bold text-[10px] text-center line-clamp-1 ${isDarkLogo ? 'text-white' : 'text-[#001849]'}`}>
+            {brand.name}
+          </span>
+        </div>
+      )}
     </div>
   );
 }

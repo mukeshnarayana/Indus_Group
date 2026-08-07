@@ -37,13 +37,14 @@ export default function ArrowHotels() {
     },
     {
       id: 'rev',
-      title: 'Revenue Share',
+      title: 'Revenue Share Model',
       badge: 'Performance-Driven Growth',
-      desc: 'We build a solid revenue management strategy based on key performance metrics to maximize your property’s sales outcomes.',
+      desc: 'Arrow Hotels builds long-term, mutually beneficial partnerships through a transparent, performance-driven Revenue Share Model — instead of a fixed lease, we share operating revenue directly with property owners, aligning both parties toward sustainable growth and maximized profitability.',
+      quote: '“Partner with Arrow Hotels and transform your property into a professionally managed hospitality destination built for lasting success.”',
       color: 'from-[#E85D25] to-[#F5A623]',
       accentBg: 'bg-[#E85D25]/10 text-[#E85D25]',
       icon: TrendingUp,
-      highlights: ['Data-Driven Yield Management', 'Sales Metric Optimization', 'Profit Margin Enhancement']
+      highlights: ['Transparent Revenue Sharing', 'Sustainable Growth Alignment', 'Maximized Profitability']
     },
     {
       id: 'franchise',
@@ -255,9 +256,17 @@ export default function ArrowHotels() {
                       {mod.title}
                     </h3>
 
-                    <p className="text-sm text-[#6B6E7A] leading-relaxed mb-6">
+                    <p className="text-sm text-[#6B6E7A] leading-relaxed mb-4">
                       {mod.desc}
                     </p>
+
+                    {mod.quote && (
+                      <div className="bg-[#FBF8F2] p-3.5 rounded-xl border-l-4 border-[#E85D25] mb-5 shadow-sm">
+                        <p className="text-xs font-serif italic text-[#001849] leading-snug">
+                          {mod.quote}
+                        </p>
+                      </div>
+                    )}
                   </div>
 
                   <div className="pt-4 border-t border-[#14171F]/10 space-y-2">
