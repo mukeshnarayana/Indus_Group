@@ -68,9 +68,9 @@ export default function Gallery() {
       brand: 'Zudio',
       state: 'Andhra Pradesh',
       city: 'Visakhapatnam, Kurmannapalem',
-      developer: 'Abiram Developers',
+      developer: 'Abhiram Developers',
       space: '4,500 sqft',
-      image: 'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWn-9WshKw3cMZCRT6CbHbN1bJzuJQX9gW6cSpqomTq-ywAswOvBOxeGaQwwMvUJR3el-SSCetElwEbBdcMrVMTK35YNAghhCpdM3womVErW5FFk9cAtSy6EFHNcNrBrhc1nW-Y213_S1Sw=w243-h304-n-k-no-nu',
+      image: '/kurmannapalem_zudio.jpg',
       promotion: "Indus Group successfully facilitated a long-term lease transaction for Abhiram Nirman India Pvt. Ltd., welcoming Zudio — a leading fashion retail brand from Trent Ltd., part of the Tata Group — to this prime location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
     },
     {
@@ -78,9 +78,9 @@ export default function Gallery() {
       brand: 'Style Union',
       state: 'Andhra Pradesh',
       city: 'Visakhapatnam, Kurmannapalem',
-      developer: 'Abiram Developers',
+      developer: 'Abhiram Developers',
       space: '4,500 sqft',
-      image: 'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnx4ucv5ZHRlAuMZ-M0_bgwMgbhrXcDZokQrYNaLwHF3IdWIdpfBDyTQMirvLJouE1hNrMeERKHG55-lloMVYF-e4lst-N8OwY6OUETAG64MA-AO-blGismk49VXTjqusnY-Ysd=s1360-w1360-h1020-rw',
+      image: '/kurmannapalem_styleunion.jpg',
       promotion: "Indus Group proudly delivered leasing consultancy services for the grand opening of Style Union, connecting a leading retail brand with a premium commercial space developed by Abhiram Nirman India Pvt. Ltd. — another landmark retail destination in Kurmannapalem."
     },
     {
@@ -88,9 +88,9 @@ export default function Gallery() {
       brand: 'Max',
       state: 'Andhra Pradesh',
       city: 'Visakhapatnam, Kurmannapalem',
-      developer: 'Abiram Developers',
+      developer: 'Abhiram Developers',
       space: '4,500 sqft',
-      image: 'https://streetviewpixels-pa.googleapis.com/v1/thumbnail?output=thumbnail&cb_client=lu.gallery.gps&panoid=jyKMZgcA9iuKBugmm5zmrg&w=980&h=200&thumb=2&yaw=63.445694&pitch=0'
+      image: '/kurmannapalem_max.jpg'
     },
     {
       id: 9,
@@ -98,7 +98,7 @@ export default function Gallery() {
       state: 'Andhra Pradesh',
       city: 'Visakhapatnam, Muralinagar',
       space: '1,000 sqft',
-      image: 'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWk8Ftb3qYSSICT877FR3dc9jDIfoCSnhIT7dGCAmZ6vBfea6YXBRxPoRmPigY7OBdIDABi-P3ekIoOsWpq3vnre8ajD4sLoP1DThOdgXagkVQAO1slzqMAIo73be4uBlYWIrM7AzoQ87Kjq=s1360-w1360-h1020-rw'
+      image: '/muralinagar_styleunion.jpg'
     },
     {
       id: 10,
@@ -106,7 +106,7 @@ export default function Gallery() {
       state: 'Andhra Pradesh',
       city: 'Visakhapatnam, Muralinagar',
       space: '1,000 sqft',
-      image: 'https://scontent.fhyd3-1.fna.fbcdn.net/v/t39.30808-6/481791060_1664969657561367_6660461780421218873_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x608&ctp=s1080x608&_nc_cat=109&ccb=1-7&_nc_sid=0b6b33&_nc_ohc=yu1jZLehwUUQ7kNvwG-RCWE&_nc_oc=Adr5oVUFP8eb_RZckcAzxyJK-YkcU9cb_pPGCEvI5OUR5y09KHr-O11jeZqhtzLTYDA&_nc_zt=23&_nc_ht=scontent.fhyd3-1.fna&_nc_gid=mMfAkTfi_f_TpHjkMEMjBg&_nc_ss=7b289&oh=00_AQFDKex-80165PfErEwUAswJ_MjYyKbTMGEu8iC_Qsyv0A&oe=6A77B112'
+      image: '/muralinagar_dmart.jpg'
     },
     {
       id: 11,
@@ -114,7 +114,7 @@ export default function Gallery() {
       state: 'Telangana',
       city: 'Hastinapuram',
       space: '15,000 sqft',
-      image: 'https://lscdn.azureedge.net/biz-live/img/11843691-11843691-6c16f3ac.jpeg'
+      image: '/hastinapuram_ibo.jpg'
     },
     {
       id: 12,
@@ -122,7 +122,7 @@ export default function Gallery() {
       state: 'Telangana',
       city: 'Karmanghat',
       space: '20,000 sqft',
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAvVzA_cGNKZDtTU0jp70WBp8wLgnm7wa6eYhLEUMElPTKQ0CM_yYu3VE&s=10'
+      image: '/karmanghat_mangalya.jpg'
     },
     {
       id: 13,
@@ -131,7 +131,7 @@ export default function Gallery() {
       city: 'Karmanghat',
       space: '2,000 sqft',
       future: 'Signed with MAX and DIY',
-      image: 'https://content3.jdmagicbox.com/v2/comp/hyderabad/c1/040pxx40.xx40.180420185204.s9c1/catalogue/s-convention-hall-karmanghat-hyderabad-convention-halls-f1kqnupe0a.jpg'
+      image: '/karmanghat_sconventions.jpg'
     },
     {
       id: 14,
@@ -147,7 +147,7 @@ export default function Gallery() {
       state: 'Andhra Pradesh',
       city: 'Srikakulam',
       space: '7,000 sqft',
-      image: ' https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxqvoW-FT6514lBRqLZi0JRK1VGksGRft45GDUknq7KA&s'
+      image: '/srikakulam_unlimited.jpg'
     },
     {
       id: 16,
@@ -155,7 +155,7 @@ export default function Gallery() {
       state: 'Andhra Pradesh',
       city: 'Vizianagaram',
       space: '17,000 sqft',
-      image: 'https://content.jdmagicbox.com/v2/comp/jharsuguda/p5/9999p6645.6645.250227054321.k2p5/catalogue/kalyan-jewellers-marwari-para-jharsuguda-jewellery-showrooms-bprtxmz6tp.jpg'
+      image: '/vizianagaram_kalyan.jpg'
     }
   ];
 
@@ -222,11 +222,25 @@ export default function Gallery() {
                 {/* Card Header: Image Container */}
                 <div className="relative h-64 overflow-hidden bg-stone-900">
                   {item.image ? (
-                    <img
-                      src={item.image}
-                      alt={item.brand}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
+                    <>
+                      <img
+                        src={item.image}
+                        alt={item.brand}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        onError={(e) => {
+                          e.currentTarget.style.display = 'none';
+                          if (e.currentTarget.nextElementSibling) {
+                            e.currentTarget.nextElementSibling.classList.remove('hidden');
+                            e.currentTarget.nextElementSibling.classList.add('flex');
+                          }
+                        }}
+                      />
+                      <div className="hidden w-full h-full bg-[#001849] flex-col items-center justify-center p-6 text-center text-white">
+                        <Building className="w-12 h-12 text-[#F5A623] mb-2" />
+                        <div className="font-serif font-bold text-lg text-white">{item.brand}</div>
+                        <div className="font-mono-code text-[11px] text-white/70 mt-1">{item.city}</div>
+                      </div>
+                    </>
                   ) : (
                     <div className="w-full h-full bg-[#001849] flex flex-col items-center justify-center p-6 text-center text-white">
                       <Building className="w-12 h-12 text-[#F5A623] mb-2" />
@@ -309,11 +323,25 @@ export default function Gallery() {
             {/* Photo Banner */}
             <div className="relative h-72 sm:h-96 bg-stone-900 overflow-hidden flex items-center justify-center">
               {(selectedModalImg || activeProject.image) ? (
-                <img
-                  src={selectedModalImg || activeProject.image}
-                  alt={activeProject.brand}
-                  className="w-full h-full object-contain bg-stone-900"
-                />
+                <>
+                  <img
+                    src={selectedModalImg || activeProject.image}
+                    alt={activeProject.brand}
+                    className="w-full h-full object-contain bg-stone-900"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                      if (e.currentTarget.nextElementSibling) {
+                        e.currentTarget.nextElementSibling.classList.remove('hidden');
+                        e.currentTarget.nextElementSibling.classList.add('flex');
+                      }
+                    }}
+                  />
+                  <div className="hidden w-full h-full bg-[#001849] flex-col items-center justify-center p-8 text-center text-white">
+                    <Building className="w-16 h-16 text-[#F5A623] mb-3" />
+                    <div className="font-serif font-bold text-2xl text-white">{activeProject.brand}</div>
+                    <div className="font-mono-code text-xs text-white/70 mt-1">{activeProject.city}, {activeProject.state}</div>
+                  </div>
+                </>
               ) : (
                 <div className="w-full h-full bg-[#001849] flex flex-col items-center justify-center p-8 text-center text-white">
                   <Building className="w-16 h-16 text-[#F5A623] mb-3" />

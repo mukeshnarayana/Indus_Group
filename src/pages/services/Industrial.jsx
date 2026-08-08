@@ -31,7 +31,7 @@ export default function IndustrialService() {
             Industrial & Logistics
           </h1>
           <p className="text-sm md:text-lg text-white/85 max-w-3xl mx-auto font-serif leading-relaxed">
-            Indus and Arrow operates one of the region's most established industrial real estate platforms, delivering an end-to-end range of services for investors, developers, and occupiers alike.
+            Indus Group and Arrow Hotels operate one of the region's most established industrial real estate platforms, delivering an end-to-end range of services for investors, developers, and occupiers alike.
           </p>
         </div>
       </section>

@@ -20,7 +20,7 @@ export default function OfficeService() {
             Office Commercial Space
           </h1>
           <p className="text-sm md:text-lg text-white/85 max-w-3xl mx-auto font-serif leading-relaxed">
-            Whatever your goals — leasing space for your team or growing an investment portfolio — Indus and Arrow brings the tools, market reach, and expertise to shape the right path forward.
+            Whatever your goals — leasing space for your team or growing an investment portfolio — Indus Group and Arrow Hotels bring the tools, market reach, and expertise to shape the right path forward.
           </p>
         </div>
       </section>

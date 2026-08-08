@@ -41,7 +41,7 @@ export default function RetailService() {
               </h2>
               <div className="bg-stone-200/60 p-5 rounded-lg border border-stone-300/40">
                 <p className="text-sm sm:text-base text-[#14171F]/80 font-serif leading-relaxed">
-                  At Indus and Arrow, we help retail occupiers and developers achieve their business objectives through integrated real estate strategy. Our team studies the shifting retail environment closely, providing actionable intelligence that drives sustainable growth.
+                  At Indus Group and Arrow Hotels, we help retail occupiers and developers achieve their business objectives through integrated real estate strategy. Our team studies the shifting retail environment closely, providing actionable intelligence that drives sustainable growth.
                 </p>
               </div>
             </div>

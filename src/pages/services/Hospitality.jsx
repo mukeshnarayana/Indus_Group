@@ -41,7 +41,7 @@ export default function HospitalityService() {
               </h2>
               <div className="bg-stone-200/60 p-5 rounded-lg border border-stone-300/40">
                 <p className="text-sm sm:text-base text-[#14171F]/80 font-serif leading-relaxed">
-                  As Indus and Arrow steps into the hospitality space, we bring the same commitment to insight-driven, research-backed guidance that defines our work in other real estate sectors. Our team studies hospitality market trends closely, providing actionable intelligence that drives sustainable growth.
+                  As Indus Group and Arrow Hotels step into the hospitality space, we bring the same commitment to insight-driven, research-backed guidance that defines our work in other real estate sectors. Our team studies hospitality market trends closely, providing actionable intelligence that drives sustainable growth.
                 </p>
               </div>
             </div>

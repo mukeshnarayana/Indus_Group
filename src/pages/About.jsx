@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import BrandLogo from '../components/BrandLogo';
-import { ShieldCheck, Heart, Award, ArrowRight, CheckCircle2, Users, Compass, Sparkles, X, Mail, Phone, Grid, Layers, Building2, ShoppingBag, Utensils, Footprints, Globe, Hotel } from 'lucide-react';
+import { ShieldCheck, Heart, Award, ArrowRight, CheckCircle2, Users, Compass, Sparkles, X, Mail, Phone, Grid, Layers, Building2, ShoppingBag, Utensils, Footprints, Globe, Hotel, GraduationCap, Briefcase, UserCheck } from 'lucide-react';
 
 export default function About() {
   const [showBioModal, setShowBioModal] = useState(false);
@@ -32,16 +32,32 @@ export default function About() {
   ];
 
   const promoter = {
-    name: 'Tejeswara Rao Pagoti',
-    role: 'Promoter of Arrow Hotels',
+    name: 'P. Tejeswara Rao',
+    role: 'Promoter & CEO – Indus Group | Arrow Hotels',
+    tagline: 'CEO & Owner',
     email: 'tejeswararao@indusgroup.in',
     phone: '+91 8420861234',
     image: '/tejeswara_rao_pagoti.jpg',
+    education: [
+      'Graduate – Acharya Nagarjuna University',
+      'Diploma in Hotel Management'
+    ],
+    profile: {
+      industry: 'Hospitality | Tourism | Retail | Real Estate',
+      leadership: 'Promoter & CEO – Indus Group & Arrow Hotels',
+      expertise: [
+        'Hospitality Development',
+        'Hotel Operations',
+        'Brand Partnerships',
+        'Strategic Business Development',
+        'Leasing & Property Consultancy',
+        'Project Development'
+      ]
+    },
     bio: [
-      "Tejeswara Rao Pagoti, aged 34, is the driving force behind Arrow Hotels, bringing a wealth of experience in the hospitality and real estate sectors. He holds a Diploma in Hotel Management.",
-      "In addition to leading Arrow Hotels, he is the founder of Arrow Hub, a prominent property leasing solutions company. His deep industry insights and strategic expertise allow him to identify prime locations and structure scalable hospitality ventures efficiently.",
-      "Having previously worked with the Tourism Development Corporation of the state government, he possesses a strong understanding of regional tourism trends, government policies, and hospitality infrastructure. This experience, coupled with his extensive network, enables him to leverage market positioning to scale Arrow Group of Hotels at a rapid yet sustainable pace.",
-      "Under his leadership, the brand is poised to redefine hospitality by blending premium experiences with operational excellence, ensuring robust growth and long-term value creation."
+      "P. Tejeswara Rao is the Promoter and Chief Executive Officer of Indus Group and Arrow Hotels, with extensive experience across the hospitality, tourism, retail, and real-estate sectors. An industry veteran with decades of professional experience, he has worked with and led initiatives involving national and international hospitality brands, gaining valuable exposure to diverse markets and business environments.",
+      "With a strong understanding of the hospitality and tourism industry, Mr. Tejeswara Rao brings expertise in hospitality development, hotel operations, brand association, strategic business development, property leasing, project consultancy, and investment-led hospitality opportunities. His experience enables him to bridge the interests of property owners, investors, hospitality brands, and business partners to create sustainable and commercially viable projects.",
+      "As the Promoter and CEO of Indus Group and Arrow Hotels, he focuses on strategic growth, brand partnerships, hospitality development, and delivering professional solutions across the hospitality and real-estate ecosystem."
     ]
   };
 
@@ -317,51 +333,83 @@ export default function About() {
               </h2>
             </div>
 
-            <div className="max-w-sm mx-auto">
+            <div className="max-w-md mx-auto">
               <div
                 onClick={() => setShowBioModal(true)}
-                className="bg-white border border-[#14171F]/10 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group"
+                className="bg-white border border-[#14171F]/15 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:border-[#E85D25]/60 transition-all duration-300 cursor-pointer group flex flex-col"
               >
-                <div className="h-64 overflow-hidden relative">
+                {/* Photo Container */}
+                <div className="h-80 overflow-hidden relative bg-stone-900">
                   <img
                     src={promoter.image}
                     alt={promoter.name}
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
 
-                  {/* Hover Overlay showing Email & Phone logos */}
-                  <div className="absolute inset-0 bg-[#001849]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                    <a
-                      href={`mailto:${promoter.email}`}
-                      onClick={(e) => e.stopPropagation()}
-                      className="w-10 h-10 rounded-full bg-white/20 hover:bg-[#E85D25] text-white flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-lg"
-                      title={`Email ${promoter.name}`}
-                    >
-                      <Mail className="w-4 h-4 text-white" />
-                    </a>
-                    <a
-                      href={`tel:${promoter.phone}`}
-                      onClick={(e) => e.stopPropagation()}
-                      className="w-10 h-10 rounded-full bg-white/20 hover:bg-[#E85D25] text-white flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-lg"
-                      title={`Call ${promoter.name}`}
-                    >
-                      <Phone className="w-4 h-4 text-white" />
-                    </a>
+                  {/* Badge Overlay */}
+                  <div className="absolute top-4 left-4 bg-[#001849] text-[#F5A623] font-mono-code text-[11px] uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-md font-bold border border-[#F5A623]/30">
+                    CEO & Owner
+                  </div>
+
+                  {/* Hover Overlay with Contact Icons */}
+                  <div className="absolute inset-0 bg-[#001849]/75 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4 text-white">
+                    <span className="font-mono-code text-xs uppercase tracking-widest text-[#F5A623] font-bold">Connect Directly</span>
+                    <div className="flex items-center gap-3">
+                      <a
+                        href={`mailto:${promoter.email}`}
+                        onClick={(e) => e.stopPropagation()}
+                        className="w-11 h-11 rounded-full bg-white/20 hover:bg-[#E85D25] text-white flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-lg"
+                        title={`Email ${promoter.name}`}
+                      >
+                        <Mail className="w-5 h-5 text-white" />
+                      </a>
+                      <a
+                        href={`tel:${promoter.phone}`}
+                        onClick={(e) => e.stopPropagation()}
+                        className="w-11 h-11 rounded-full bg-white/20 hover:bg-[#E85D25] text-white flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-lg"
+                        title={`Call ${promoter.name}`}
+                      >
+                        <Phone className="w-5 h-5 text-white" />
+                      </a>
+                    </div>
+                    <span className="font-serif text-xs text-white/80 mt-1">Click to view full executive profile</span>
                   </div>
                 </div>
-                <div className="p-5">
-                  <h3 className="font-serif text-lg font-bold text-[#001849]">
-                    {promoter.name}
-                  </h3>
-                  <div className="font-mono-code text-[11px] text-[#E85D25] uppercase tracking-wider mb-2.5">
-                    {promoter.role}
+
+                {/* Card Content Body */}
+                <div className="p-6 bg-white flex-1 flex flex-col justify-between space-y-4">
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-1">
+                      <h3 className="font-serif text-2xl font-bold text-[#001849]">
+                        {promoter.name}
+                      </h3>
+                      <span className="font-mono-code text-[10px] bg-[#E85D25]/10 text-[#E85D25] font-bold px-2.5 py-1 rounded-md uppercase shrink-0">
+                        Promoter & CEO
+                      </span>
+                    </div>
+
+                    <div className="font-sans text-xs font-semibold text-[#6B6E7A] mb-3">
+                      Indus Group & Arrow Hotels
+                    </div>
+
+                    <p className="text-xs text-[#14171F]/80 leading-relaxed line-clamp-3 mb-4">
+                      {promoter.bio[0]}
+                    </p>
+
+                    {/* Quick Education / Profile Pills */}
+                    <div className="flex flex-wrap gap-1.5 mb-2">
+                      <span className="inline-flex items-center gap-1 font-mono-code text-[10px] bg-[#FBF8F2] text-[#001849] border border-stone-200 px-2.5 py-1 rounded-md font-medium">
+                        <GraduationCap className="w-3 h-3 text-[#E85D25]" /> Acharya Nagarjuna Univ.
+                      </span>
+                      <span className="inline-flex items-center gap-1 font-mono-code text-[10px] bg-[#FBF8F2] text-[#001849] border border-stone-200 px-2.5 py-1 rounded-md font-medium">
+                        <Award className="w-3 h-3 text-[#F5A623]" /> Hotel Management
+                      </span>
+                    </div>
                   </div>
-                  <p className="text-xs text-[#6B6E7A] leading-relaxed line-clamp-3 mb-3">
-                    {promoter.bio[0]}
-                  </p>
-                  <div className="pt-2.5 border-t border-gray-100 flex items-center justify-between text-xs font-mono-code font-bold text-[#001849] group-hover:text-[#E85D25] transition-colors">
-                    <span>READ FULL PROFILE</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+
+                  <div className="pt-3 border-t border-stone-100 flex items-center justify-between text-xs font-mono-code font-bold text-[#001849] group-hover:text-[#E85D25] transition-colors">
+                    <span>VIEW FULL PROFILE</span>
+                    <ArrowRight className="w-4 h-4 text-[#E85D25] group-hover:translate-x-1.5 transition-transform" />
                   </div>
                 </div>
               </div>
@@ -544,59 +592,173 @@ export default function About() {
         </div>
       )}
 
-      {/* Full Bio Modal */}
+      {/* Full Bio / Executive Dossier Modal */}
       {showBioModal && (
         <div
-          className="fixed inset-0 z-50 bg-[#001849]/75 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+          className="fixed inset-0 z-50 bg-[#001849]/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
           onClick={() => setShowBioModal(false)}
         >
           <div
-            className="bg-white max-w-2xl w-full rounded-2xl shadow-2xl overflow-hidden relative my-8 animate-fadeIn border border-[#001849]/10"
+            className="bg-white max-w-4xl w-full rounded-2xl shadow-2xl overflow-hidden relative my-6 border border-[#001849]/15 animate-fadeIn max-h-[90vh] flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header Bar */}
-            <div className="bg-[#001849] text-white p-6 sm:p-8 relative flex items-start justify-between">
-              <div className="flex items-center gap-4 sm:gap-6">
-                <img
-                  src={promoter.image}
-                  alt={promoter.name}
-                  className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover object-top border-4 border-[#F5A623] shadow-md shrink-0"
-                />
-                <div>
-                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-1">
-                    {promoter.name}
-                  </h3>
-                  <div className="font-mono-code text-xs sm:text-sm text-[#F5A623] tracking-wider font-semibold uppercase">
-                    {promoter.role}
-                  </div>
-                </div>
+            <div className="bg-[#001849] text-white p-6 sm:p-7 flex items-center justify-between border-b border-white/10 shrink-0">
+              <div>
+                <span className="font-mono-code text-xs text-[#F5A623] uppercase tracking-widest block mb-1 font-bold flex items-center gap-1.5">
+                  <UserCheck className="w-4 h-4 text-[#F5A623]" /> Executive Leadership Profile
+                </span>
+                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white">
+                  {promoter.name}
+                </h3>
               </div>
               <button
                 onClick={() => setShowBioModal(false)}
-                className="text-white/70 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors shrink-0"
+                className="text-white/70 hover:text-white p-2.5 rounded-full hover:bg-white/10 transition-colors shrink-0"
                 aria-label="Close modal"
               >
                 <X className="w-6 h-6" />
               </button>
             </div>
 
-            {/* Modal Body */}
-            <div className="p-6 sm:p-8 space-y-4 max-h-[60vh] overflow-y-auto text-[#14171F]/85 leading-relaxed font-sans">
-              {promoter.bio.map((paragraph, idx) => (
-                <p key={idx} className="text-sm sm:text-base leading-relaxed">
-                  {paragraph}
-                </p>
-              ))}
+            {/* Modal Scrollable Body */}
+            <div className="p-6 sm:p-8 overflow-y-auto space-y-8 bg-[#FBF8F2]/50">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                
+                {/* Left Column: Photo & Education */}
+                <div className="md:col-span-5 space-y-6">
+                  {/* Photo Container */}
+                  <div className="rounded-2xl overflow-hidden border-2 border-[#F5A623]/40 shadow-xl bg-stone-900 relative group">
+                    <img
+                      src={promoter.image}
+                      alt={promoter.name}
+                      className="w-full h-80 md:h-96 object-cover object-top"
+                    />
+                    <div className="absolute bottom-4 left-4 right-4 bg-[#001849]/90 backdrop-blur-md p-3 rounded-xl border border-white/15 text-white">
+                      <div className="font-mono-code text-[11px] text-[#F5A623] font-bold uppercase tracking-wider">
+                        CEO & Owner
+                      </div>
+                      <div className="font-serif font-bold text-sm text-white">
+                        Indus Group & Arrow Hotels
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Direct Contact Buttons */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <a
+                      href={`mailto:${promoter.email}`}
+                      className="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-[#001849] text-white font-mono-code text-xs font-bold hover:bg-[#E85D25] transition-colors shadow-sm"
+                    >
+                      <Mail className="w-4 h-4 text-[#F5A623]" />
+                      <span>Email CEO</span>
+                    </a>
+                    <a
+                      href={`tel:${promoter.phone}`}
+                      className="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-white text-[#001849] border border-stone-300 font-mono-code text-xs font-bold hover:border-[#E85D25] hover:text-[#E85D25] transition-colors shadow-sm"
+                    >
+                      <Phone className="w-4 h-4 text-[#E85D25]" />
+                      <span>Call Direct</span>
+                    </a>
+                  </div>
+
+                  {/* Education Box */}
+                  <div className="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm space-y-3">
+                    <div className="flex items-center gap-2 text-[#001849] font-serif font-bold text-base border-b border-stone-100 pb-2">
+                      <GraduationCap className="w-5 h-5 text-[#E85D25]" />
+                      <span>Education</span>
+                    </div>
+                    <ul className="space-y-2 font-sans text-xs text-[#14171F]/85 font-medium">
+                      {promoter.education.map((edu, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <CheckCircle2 className="w-4 h-4 text-[#F5A623] shrink-0 mt-0.5" />
+                          <span>{edu}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Right Column: Complete Biography & Professional Profile */}
+                <div className="md:col-span-7 space-y-6">
+                  
+                  {/* Name & Leadership Header */}
+                  <div className="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm space-y-2">
+                    <span className="font-mono-code text-xs text-[#E85D25] font-bold uppercase tracking-widest block">
+                      Promoter & Chief Executive Officer
+                    </span>
+                    <h2 className="font-serif text-3xl font-bold text-[#001849]">
+                      {promoter.name}
+                    </h2>
+                    <p className="text-xs font-mono-code text-[#6B6E7A] font-semibold">
+                      Indus Group | Arrow Hotels
+                    </p>
+                  </div>
+
+                  {/* Biography Paragraphs */}
+                  <div className="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm space-y-4 text-sm text-[#14171F]/85 leading-relaxed font-sans">
+                    <h4 className="font-serif font-bold text-lg text-[#001849] border-b border-stone-100 pb-2 flex items-center gap-2">
+                      <Briefcase className="w-4 h-4 text-[#E85D25]" />
+                      <span>Executive Overview & Background</span>
+                    </h4>
+                    {promoter.bio.map((paragraph, idx) => (
+                      <p key={idx} className="leading-relaxed">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+
+                  {/* Professional Profile & Expertise */}
+                  <div className="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm space-y-4">
+                    <h4 className="font-serif font-bold text-lg text-[#001849] border-b border-stone-100 pb-2 flex items-center gap-2">
+                      <Award className="w-5 h-5 text-[#F5A623]" />
+                      <span>Professional Profile & Expertise</span>
+                    </h4>
+
+                    <div className="space-y-3">
+                      <div className="text-xs font-sans">
+                        <span className="font-mono-code font-bold text-[#001849] uppercase tracking-wider block mb-1">Industry Sectors:</span>
+                        <span className="text-[#6B6E7A] font-medium">{promoter.profile.industry}</span>
+                      </div>
+                      
+                      <div className="text-xs font-sans">
+                        <span className="font-mono-code font-bold text-[#001849] uppercase tracking-wider block mb-1">Leadership Role:</span>
+                        <span className="text-[#6B6E7A] font-medium">{promoter.profile.leadership}</span>
+                      </div>
+                    </div>
+
+                    <div className="pt-2 border-t border-stone-100">
+                      <span className="font-mono-code text-xs font-bold text-[#001849] uppercase tracking-wider block mb-2.5">
+                        Core Expertise:
+                      </span>
+                      <div className="flex flex-wrap gap-2">
+                        {promoter.profile.expertise.map((exp, i) => (
+                          <span
+                            key={i}
+                            className="font-mono-code text-[11px] bg-[#001849]/5 text-[#001849] border border-[#001849]/10 px-3 py-1.5 rounded-lg font-bold hover:bg-[#E85D25] hover:text-white transition-colors"
+                          >
+                            {exp}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
             </div>
 
             {/* Modal Footer */}
-            <div className="bg-[#FBF8F2] px-6 py-4 border-t border-[#14171F]/10 flex justify-between items-center">
-              <span className="text-xs font-mono-code text-[#6B6E7A]">Arrow Hotels Leadership</span>
+            <div className="bg-[#FBF8F2] px-6 py-4 border-t border-[#14171F]/10 flex justify-between items-center shrink-0">
+              <span className="text-xs font-mono-code text-[#6B6E7A] font-medium">
+                Indus Group & Arrow Hotels Executive Leadership
+              </span>
               <button
                 onClick={() => setShowBioModal(false)}
                 className="px-6 py-2.5 bg-[#001849] text-white font-mono-code text-xs font-bold uppercase rounded-lg hover:bg-[#E85D25] transition-colors shadow"
               >
-                Close
+                Close Profile
               </button>
             </div>
           </div>
