@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, ZoomIn, MapPin, Building, Maximize2, Tag, CheckCircle2, Filter, ImageIcon, Sparkles } from 'lucide-react';
+import { X, ZoomIn, MapPin, Building, Maximize2, Tag, CheckCircle2, Filter, ImageIcon, Sparkles, Clock, ShieldCheck } from 'lucide-react';
 
 export default function Gallery() {
   const [selectedFilter, setSelectedFilter] = useState('All');
@@ -14,6 +14,7 @@ export default function Gallery() {
       city: 'Visakhapatnam',
       developer: 'Abhiram Hotels & Resorts and Indus Group',
       space: '32-Room Hotel',
+      status: 'Signed',
       future: 'Suba Group Hospitality Portfolio Signing',
       image: '/click_hotels_building.jpg',
       images: ['/click_hotels_building.jpg', '/click_hotels_press.jpg'],
@@ -26,6 +27,7 @@ export default function Gallery() {
       city: 'Visakhapatnam, Gajuwaka',
       developer: 'Ramachandra Multiplex',
       space: '1,00,000 sqft',
+      status: 'Opening Soon',
       future: 'Opening Soon - January 2027',
       image: '/ramachandra_multiplex.jpg',
       promotion: "Indus Group is proud to facilitate premier commercial leasing for Ramachandra Multiplex in Gajuwaka, Visakhapatnam. Spanning 1,00,000 sq.ft., this upcoming mega multiplex & retail destination features anchor partners including Style Union, MR. DIY, High Volt Game Zone, and an Innovated Food Court. Opening Soon: January 2027."
@@ -37,6 +39,7 @@ export default function Gallery() {
       city: 'Srikakulam, Nalgonda',
       developer: 'Fashion City',
       space: '8,000 sqft',
+      status: 'Opening Soon',
       future: 'Opening Soon - August 2026',
       image: '/fashion_city.jpg',
       promotion: "Indus Group is proud to facilitate commercial leasing for Fashion City in Srikakulam / Nalgonda. Spanning 8,000 sq.ft. across prime commercial floors, this upcoming landmark fashion retail destination is scheduled for Grand Opening in August 2026."
@@ -48,6 +51,7 @@ export default function Gallery() {
       city: 'Nizamabad',
       developer: 'Masha Constructions (Saudi Arabia)',
       space: '11,000 sqft',
+      status: 'Under Construction',
       future: 'Under Construction - Key Leasing Hub',
       image: '/nizamabad_fashioncity.jpg',
       promotion: "Indus Group is proud to deliver comprehensive leasing consultancy for Masha Constructions (Saudi Arabia) in Nizamabad, Telangana. Spanning 11,000 sq.ft., this commercial hub features Fashion City across 8,000 sq.ft. and More Supermarket across 3,000 sq.ft. on the lower ground floor."
@@ -59,6 +63,7 @@ export default function Gallery() {
       city: 'Visakhapatnam, Pendurthi',
       developer: 'Fashion City',
       space: '24,000 sqft',
+      status: 'Under Development',
       future: 'Under Development - Active Leasing',
       image: '/pendurthi_fashioncity.jpg',
       promotion: "Indus Group is actively executing commercial leasing for the upcoming 24,000 sq.ft. Fashion City commercial hub in Pendurthi, Visakhapatnam. Currently under foundation & structural development, offering prime retail space for anchor brands."
@@ -70,6 +75,7 @@ export default function Gallery() {
       city: 'Visakhapatnam, Kurmannapalem',
       developer: 'Abhiram Developers',
       space: '4,500 sqft',
+      status: 'Completed',
       image: '/kurmannapalem_zudio.jpg',
       promotion: "Indus Group successfully facilitated a long-term lease transaction for Abhiram Nirman India Pvt. Ltd., welcoming Zudio — a leading fashion retail brand from Trent Ltd., part of the Tata Group — to this prime location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
     },
@@ -80,92 +86,102 @@ export default function Gallery() {
       city: 'Visakhapatnam, Kurmannapalem',
       developer: 'Abhiram Developers',
       space: '4,500 sqft',
+      status: 'Completed',
       image: '/kurmannapalem_styleunion.jpg',
       promotion: "Indus Group proudly delivered leasing consultancy services for the grand opening of Style Union, connecting a leading retail brand with a premium commercial space developed by Abhiram Nirman India Pvt. Ltd. — another landmark retail destination in Kurmannapalem."
     },
     {
-  id: 8,
-  brand: 'Max',
-  state: 'Andhra Pradesh',
-  city: 'Visakhapatnam, Kurmannapalem',
-  developer: 'Abhiram Developers',
-  space: '4,500 sqft',
-  image: '/kurmannapalem_max.jpg',
-  promotion: "Indus Group successfully facilitated a long-term lease transaction for Abhiram Developers, welcoming Max — one of India's leading fashion and lifestyle retail brands from the Landmark Group — to this prime location at Kurmannapalem, Visakhapatnam. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
-},
+      id: 8,
+      brand: 'Max',
+      state: 'Andhra Pradesh',
+      city: 'Visakhapatnam, Kurmannapalem',
+      developer: 'Abhiram Developers',
+      space: '4,500 sqft',
+      status: 'Completed',
+      image: '/kurmannapalem_max.jpg',
+      promotion: "Indus Group successfully facilitated a long-term lease transaction for Abhiram Developers, welcoming Max — one of India's leading fashion and lifestyle retail brands from the Landmark Group — to this prime location at Kurmannapalem, Visakhapatnam. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
+    },
     {
       id: 9,
       brand: 'Style Union',
       state: 'Andhra Pradesh',
       city: 'Visakhapatnam, Muralinagar',
       space: '1,000 sqft',
+      status: 'Completed',
       image: '/muralinagar_styleunion.jpg',
       promotion: "Indus Group successfully facilitated a long-term lease transaction at Murali Nagar, welcoming Style Union to this prime retail location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
     },
-   {
-  id: 10,
-  brand: 'DMart',
-  state: 'Andhra Pradesh',
-  city: 'Visakhapatnam, Muralinagar',
-  space: '1,000 sqft',
-  image: '/muralinagar_dmart.jpg',
-  promotion: "Indus Group successfully facilitated a long-term lease transaction at Muralinagar, Visakhapatnam, welcoming DMart — one of India's most trusted value retail chains — to this prime location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
-},
-   {
-  id: 11,
-  brand: 'IBO',
-  state: 'Telangana',
-  city: 'Hastinapuram',
-  space: '15,000 sqft',
-  image: '/hastinapuram_ibo.jpg',
-  promotion: "Indus Group successfully facilitated a long-term lease transaction at Hastinapuram, Hyderabad, welcoming IBO to this prime location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
-},
     {
-  id: 12,
-  brand: 'Mangalya Shopping Mall',
-  state: 'Telangana',
-  city: 'Karmanghat',
-  space: '20,000 sqft',
-  image: '/karmanghat_mangalya.jpg',
-  promotion: "Indus Group successfully facilitated the leasing and development strategy for Mangalya Shopping Mall at Karmanghat, Hyderabad — bringing a vibrant retail destination to this prime location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
-},
+      id: 10,
+      brand: 'DMart',
+      state: 'Andhra Pradesh',
+      city: 'Visakhapatnam, Muralinagar',
+      space: '1,000 sqft',
+      status: 'Completed',
+      image: '/muralinagar_dmart.jpg',
+      promotion: "Indus Group successfully facilitated a long-term lease transaction at Muralinagar, Visakhapatnam, welcoming DMart — one of India's most trusted value retail chains — to this prime location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
+    },
     {
-  id: 13,
-  brand: 'S Conventions',
-  state: 'Telangana',
-  city: 'Karmanghat',
-  space: '2,000 sqft',
-  future: 'Signed with MAX and DIY',
-  image: '/karmanghat_sconventions.jpg',
-  promotion: "Indus Group successfully facilitated a long-term lease transaction at S Conventions, Karmanghat, signing Max and Mr. DIY to this prime location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
-},
-   {
-  id: 14,
-  brand: 'Max & DIY (Upcoming)',
-  state: 'Telangana',
-  city: 'Karmanghat',
-  future: 'Signed with MAX and DIY',
-  image: '',
-  promotion: "Indus Group successfully facilitated a long-term lease transaction at Karmanghat, signing Max and Mr. DIY for this upcoming retail location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
-},
-   {
-  id: 15,
-  brand: 'Unlimited',
-  state: 'Andhra Pradesh',
-  city: 'Srikakulam',
-  space: '7,000 sqft',
-  image: '/srikakulam_unlimited.jpg',
-  promotion: "Indus Group successfully facilitated a long-term lease transaction at Srikakulam, welcoming Unlimited — a leading fashion and lifestyle retail brand — to this prime location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
-},
+      id: 11,
+      brand: 'IBO',
+      state: 'Telangana',
+      city: 'Hastinapuram',
+      space: '15,000 sqft',
+      status: 'Completed',
+      image: '/hastinapuram_ibo.jpg',
+      promotion: "Indus Group successfully facilitated a long-term lease transaction at Hastinapuram, Hyderabad, welcoming IBO to this prime location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
+    },
     {
-  id: 16,
-  brand: 'Kalyan Jewellers',
-  state: 'Andhra Pradesh',
-  city: 'Vizianagaram',
-  space: '17,000 sqft',
-  image: '/vizianagaram_kalyan.jpg',
-  promotion: "Indus Group successfully facilitated a long-term lease transaction at Vizianagaram, welcoming Kalyan Jewellers — one of India's most trusted and widely recognized jewellery brands — to this prime location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
-}
+      id: 12,
+      brand: 'Mangalya Shopping Mall',
+      state: 'Telangana',
+      city: 'Karmanghat',
+      space: '20,000 sqft',
+      status: 'Completed',
+      image: '/karmanghat_mangalya.jpg',
+      promotion: "Indus Group successfully facilitated the leasing and development strategy for Mangalya Shopping Mall at Karmanghat, Hyderabad — bringing a vibrant retail destination to this prime location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
+    },
+    {
+      id: 13,
+      brand: 'S Conventions',
+      state: 'Telangana',
+      city: 'Karmanghat',
+      space: '2,000 sqft',
+      status: 'Completed',
+      future: 'Signed with MAX and DIY',
+      image: '/karmanghat_sconventions.jpg',
+      promotion: "Indus Group successfully facilitated a long-term lease transaction at S Conventions, Karmanghat, signing Max and Mr. DIY to this prime location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
+    },
+    {
+      id: 14,
+      brand: 'Max & DIY (Upcoming)',
+      state: 'Telangana',
+      city: 'Karmanghat',
+      status: 'Upcoming',
+      future: 'Signed with MAX and DIY',
+      image: '',
+      promotion: "Indus Group successfully facilitated a long-term lease transaction at Karmanghat, signing Max and Mr. DIY for this upcoming retail location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
+    },
+    {
+      id: 15,
+      brand: 'Unlimited',
+      state: 'Andhra Pradesh',
+      city: 'Srikakulam',
+      space: '7,000 sqft',
+      status: 'Completed',
+      image: '/srikakulam_unlimited.jpg',
+      promotion: "Indus Group successfully facilitated a long-term lease transaction at Srikakulam, welcoming Unlimited — a leading fashion and lifestyle retail brand — to this prime location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
+    },
+    {
+      id: 16,
+      brand: 'Kalyan Jewellers',
+      state: 'Andhra Pradesh',
+      city: 'Vizianagaram',
+      space: '17,000 sqft',
+      status: 'Completed',
+      image: '/vizianagaram_kalyan.jpg',
+      promotion: "Indus Group successfully facilitated a long-term lease transaction at Vizianagaram, welcoming Kalyan Jewellers — one of India's most trusted and widely recognized jewellery brands — to this prime location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
+    }
   ];
 
   const filters = ['All', 'Andhra Pradesh', 'Telangana'];
@@ -173,6 +189,35 @@ export default function Gallery() {
   const filteredProjects = selectedFilter === 'All'
     ? projects
     : projects.filter(p => p.state === selectedFilter);
+
+  const renderStatusBadge = (status) => {
+    if (!status) return null;
+    const s = status.toLowerCase();
+
+    let badgeStyle = 'bg-emerald-600 text-white border-emerald-500/30';
+    let IconComponent = CheckCircle2;
+
+    if (s.includes('completed')) {
+      badgeStyle = 'bg-emerald-600 text-white border-emerald-500/30';
+      IconComponent = CheckCircle2;
+    } else if (s.includes('opening') || s.includes('soon')) {
+      badgeStyle = 'bg-amber-600 text-white border-amber-500/30';
+      IconComponent = Sparkles;
+    } else if (s.includes('construction') || s.includes('development')) {
+      badgeStyle = 'bg-blue-600 text-white border-blue-500/30';
+      IconComponent = Building;
+    } else {
+      badgeStyle = 'bg-indigo-600 text-white border-indigo-500/30';
+      IconComponent = Tag;
+    }
+
+    return (
+      <span className={`font-mono-code text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-sm font-bold flex items-center gap-1 border ${badgeStyle}`}>
+        <IconComponent className="w-3 h-3" />
+        <span>{status}</span>
+      </span>
+    );
+  };
 
   return (
     <div className="pt-20 bg-[#FBF8F2] min-h-screen text-[#14171F]">
@@ -258,46 +303,66 @@ export default function Gallery() {
                     </div>
                   )}
 
-                  {/* Promotion Badge Overlay if present */}
-                  {item.promotion && (
-                    <div className="absolute top-3 right-3 bg-[#E85D25] text-white font-mono-code text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-md shadow-md font-bold flex items-center gap-1">
-                      <Sparkles className="w-3 h-3 text-[#F5A623]" />
-                      <span>Featured Leasing</span>
+                  {/* Badges Overlay */}
+                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2 z-10 pointer-events-none">
+                    <div className="flex items-center gap-1.5 flex-wrap">
+                      <span className="bg-[#001849]/95 text-[#F5A623] backdrop-blur-sm font-mono-code text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-sm font-bold border border-white/10">
+                        {item.state}
+                      </span>
+                      {item.status && renderStatusBadge(item.status)}
                     </div>
-                  )}
+
+                    {item.promotion && (
+                      <div className="bg-[#E85D25] text-white font-mono-code text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-md shadow-md font-bold flex items-center gap-1 shrink-0">
+                        <Sparkles className="w-3 h-3 text-[#F5A623]" />
+                        <span>Featured</span>
+                      </div>
+                    )}
+                  </div>
 
                   {/* Hover Overlay Prompt */}
-                  <div className="absolute inset-0 bg-[#001849]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white gap-2">
+                  <div className="absolute inset-0 bg-[#001849]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white gap-2 z-20">
                     <ZoomIn className="w-8 h-8 text-[#F5A623]" />
                     <span className="font-mono-code text-xs uppercase tracking-wider font-bold">View Full Project Details</span>
                   </div>
-
-                  {/* Location Badge */}
-                  <span className="absolute top-3 left-3 bg-[#001849] text-[#F5A623] font-mono-code text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-sm font-bold border border-white/10">
-                    {item.state}
-                  </span>
                 </div>
 
-                {/* Card Footer: Brand Name & Promotion Text Under Image */}
-                <div className="p-5 sm:p-6 bg-white space-y-3 border-t border-stone-100">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <span className="font-mono-code text-[10px] text-[#E85D25] font-bold uppercase tracking-wider block mb-0.5">
-                        Brand Partner
-                      </span>
-                      <h3 className="font-serif text-xl font-bold text-[#001849] capitalize">
-                        {item.brand}
-                      </h3>
+                {/* Card Body & Footer */}
+                <div className="p-5 sm:p-6 bg-white space-y-3.5 border-t border-stone-100 flex-1 flex flex-col justify-between">
+                  <div className="space-y-2">
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <span className="font-mono-code text-[10px] text-[#E85D25] font-bold uppercase tracking-wider block mb-0.5">
+                          Brand Partner
+                        </span>
+                        <h3 className="font-serif text-xl font-bold text-[#001849] capitalize leading-snug">
+                          {item.brand}
+                        </h3>
+                      </div>
+
+                      <div className="w-9 h-9 rounded-full bg-[#FBF8F2] text-[#001849] group-hover:bg-[#E85D25] group-hover:text-white flex items-center justify-center transition-colors shrink-0">
+                        <Maximize2 className="w-4 h-4" />
+                      </div>
                     </div>
 
-                    <div className="w-9 h-9 rounded-full bg-[#FBF8F2] text-[#001849] group-hover:bg-[#E85D25] group-hover:text-white flex items-center justify-center transition-colors shrink-0">
-                      <Maximize2 className="w-4 h-4" />
+                    {/* Metadata line: City & Space */}
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-[#6B6E7A] font-medium pt-0.5">
+                      <span className="flex items-center gap-1">
+                        <MapPin className="w-3.5 h-3.5 text-[#E85D25] shrink-0" />
+                        {item.city}
+                      </span>
+                      {item.space && (
+                        <span className="flex items-center gap-1">
+                          <Maximize2 className="w-3.5 h-3.5 text-[#001849] shrink-0" />
+                          {item.space}
+                        </span>
+                      )}
                     </div>
                   </div>
 
                   {/* Promotion Text Under Image */}
                   {item.promotion && (
-                    <div className="pt-2.5 border-t border-stone-100">
+                    <div className="pt-3 border-t border-stone-100">
                       <p className="text-xs text-[#6B6E7A] font-sans leading-relaxed line-clamp-3">
                         {item.promotion}
                       </p>
@@ -360,10 +425,17 @@ export default function Gallery() {
               )}
               <div className="absolute inset-0 bg-gradient-to-t from-[#001849] via-transparent to-transparent opacity-80 pointer-events-none" />
 
-              <div className="absolute bottom-6 left-6 right-6 text-white pointer-events-none">
-                <span className="font-mono-code text-xs text-[#F5A623] uppercase tracking-widest block mb-1 font-bold">
-                  {activeProject.state} Real Estate
-                </span>
+              <div className="absolute bottom-6 left-6 right-6 text-white pointer-events-none space-y-1">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="font-mono-code text-xs text-[#F5A623] uppercase tracking-widest font-bold">
+                    {activeProject.state} Real Estate
+                  </span>
+                  {activeProject.status && (
+                    <div className="pointer-events-auto">
+                      {renderStatusBadge(activeProject.status)}
+                    </div>
+                  )}
+                </div>
                 <h3 className="font-serif text-3xl font-bold capitalize text-white">
                   {activeProject.brand}
                 </h3>
@@ -430,6 +502,16 @@ export default function Gallery() {
                   </div>
                 </div>
 
+                {/* Status Field */}
+                <div className="p-4 bg-[#FBF8F2] rounded-xl border border-stone-200">
+                  <div className="flex items-center gap-2 text-xs font-mono-code text-[#E85D25] uppercase font-bold mb-1">
+                    <ShieldCheck className="w-4 h-4" /> Project Status
+                  </div>
+                  <div className="mt-1">
+                    {renderStatusBadge(activeProject.status || 'Active')}
+                  </div>
+                </div>
+
                 {/* Location City */}
                 <div className="p-4 bg-[#FBF8F2] rounded-xl border border-stone-200">
                   <div className="flex items-center gap-2 text-xs font-mono-code text-[#E85D25] uppercase font-bold mb-1">
@@ -454,7 +536,7 @@ export default function Gallery() {
 
                 {/* Developer */}
                 {activeProject.developer && (
-                  <div className="p-4 bg-[#FBF8F2] rounded-xl border border-stone-200">
+                  <div className="p-4 bg-[#FBF8F2] rounded-xl border border-stone-200 sm:col-span-2">
                     <div className="flex items-center gap-2 text-xs font-mono-code text-[#E85D25] uppercase font-bold mb-1">
                       <Building className="w-4 h-4" /> Developer Partner
                     </div>
