@@ -84,79 +84,88 @@ export default function Gallery() {
       promotion: "Indus Group proudly delivered leasing consultancy services for the grand opening of Style Union, connecting a leading retail brand with a premium commercial space developed by Abhiram Nirman India Pvt. Ltd. — another landmark retail destination in Kurmannapalem."
     },
     {
-      id: 8,
-      brand: 'Max',
-      state: 'Andhra Pradesh',
-      city: 'Visakhapatnam, Kurmannapalem',
-      developer: 'Abhiram Developers',
-      space: '4,500 sqft',
-      image: '/kurmannapalem_max.jpg'
-    },
+  id: 8,
+  brand: 'Max',
+  state: 'Andhra Pradesh',
+  city: 'Visakhapatnam, Kurmannapalem',
+  developer: 'Abhiram Developers',
+  space: '4,500 sqft',
+  image: '/kurmannapalem_max.jpg',
+  promotion: "Indus Group successfully facilitated a long-term lease transaction for Abhiram Developers, welcoming Max — one of India's leading fashion and lifestyle retail brands from the Landmark Group — to this prime location at Kurmannapalem, Visakhapatnam. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
+},
     {
       id: 9,
       brand: 'Style Union',
       state: 'Andhra Pradesh',
       city: 'Visakhapatnam, Muralinagar',
       space: '1,000 sqft',
-      image: '/muralinagar_styleunion.jpg'
+      image: '/muralinagar_styleunion.jpg',
+      promotion: "Indus Group successfully facilitated a long-term lease transaction at Murali Nagar, welcoming Style Union to this prime retail location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
     },
+   {
+  id: 10,
+  brand: 'DMart',
+  state: 'Andhra Pradesh',
+  city: 'Visakhapatnam, Muralinagar',
+  space: '1,000 sqft',
+  image: '/muralinagar_dmart.jpg',
+  promotion: "Indus Group successfully facilitated a long-term lease transaction at Muralinagar, Visakhapatnam, welcoming DMart — one of India's most trusted value retail chains — to this prime location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
+},
+   {
+  id: 11,
+  brand: 'IBO',
+  state: 'Telangana',
+  city: 'Hastinapuram',
+  space: '15,000 sqft',
+  image: '/hastinapuram_ibo.jpg',
+  promotion: "Indus Group successfully facilitated a long-term lease transaction at Hastinapuram, Hyderabad, welcoming IBO to this prime location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
+},
     {
-      id: 10,
-      brand: 'DMart',
-      state: 'Andhra Pradesh',
-      city: 'Visakhapatnam, Muralinagar',
-      space: '1,000 sqft',
-      image: '/muralinagar_dmart.jpg'
-    },
+  id: 12,
+  brand: 'Mangalya Shopping Mall',
+  state: 'Telangana',
+  city: 'Karmanghat',
+  space: '20,000 sqft',
+  image: '/karmanghat_mangalya.jpg',
+  promotion: "Indus Group successfully facilitated the leasing and development strategy for Mangalya Shopping Mall at Karmanghat, Hyderabad — bringing a vibrant retail destination to this prime location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
+},
     {
-      id: 11,
-      brand: 'IBO',
-      state: 'Telangana',
-      city: 'Hastinapuram',
-      space: '15,000 sqft',
-      image: '/hastinapuram_ibo.jpg'
-    },
+  id: 13,
+  brand: 'S Conventions',
+  state: 'Telangana',
+  city: 'Karmanghat',
+  space: '2,000 sqft',
+  future: 'Signed with MAX and DIY',
+  image: '/karmanghat_sconventions.jpg',
+  promotion: "Indus Group successfully facilitated a long-term lease transaction at S Conventions, Karmanghat, signing Max and Mr. DIY to this prime location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
+},
+   {
+  id: 14,
+  brand: 'Max & DIY (Upcoming)',
+  state: 'Telangana',
+  city: 'Karmanghat',
+  future: 'Signed with MAX and DIY',
+  image: '',
+  promotion: "Indus Group successfully facilitated a long-term lease transaction at Karmanghat, signing Max and Mr. DIY for this upcoming retail location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
+},
+   {
+  id: 15,
+  brand: 'Unlimited',
+  state: 'Andhra Pradesh',
+  city: 'Srikakulam',
+  space: '7,000 sqft',
+  image: '/srikakulam_unlimited.jpg',
+  promotion: "Indus Group successfully facilitated a long-term lease transaction at Srikakulam, welcoming Unlimited — a leading fashion and lifestyle retail brand — to this prime location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
+},
     {
-      id: 12,
-      brand: 'Mangalya Shopping Mall',
-      state: 'Telangana',
-      city: 'Karmanghat',
-      space: '20,000 sqft',
-      image: '/karmanghat_mangalya.jpg'
-    },
-    {
-      id: 13,
-      brand: 'S Conventions',
-      state: 'Telangana',
-      city: 'Karmanghat',
-      space: '2,000 sqft',
-      future: 'Signed with MAX and DIY',
-      image: '/karmanghat_sconventions.jpg'
-    },
-    {
-      id: 14,
-      brand: 'Max & DIY (Upcoming)',
-      state: 'Telangana',
-      city: 'Karmanghat',
-      future: 'Signed with MAX and DIY',
-      image: ''
-    },
-    {
-      id: 15,
-      brand: 'Unlimited',
-      state: 'Andhra Pradesh',
-      city: 'Srikakulam',
-      space: '7,000 sqft',
-      image: '/srikakulam_unlimited.jpg'
-    },
-    {
-      id: 16,
-      brand: 'Kalyan Jewellers',
-      state: 'Andhra Pradesh',
-      city: 'Vizianagaram',
-      space: '17,000 sqft',
-      image: '/vizianagaram_kalyan.jpg'
-    }
+  id: 16,
+  brand: 'Kalyan Jewellers',
+  state: 'Andhra Pradesh',
+  city: 'Vizianagaram',
+  space: '17,000 sqft',
+  image: '/vizianagaram_kalyan.jpg',
+  promotion: "Indus Group successfully facilitated a long-term lease transaction at Vizianagaram, welcoming Kalyan Jewellers — one of India's most trusted and widely recognized jewellery brands — to this prime location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
+}
   ];
 
   const filters = ['All', 'Andhra Pradesh', 'Telangana'];
