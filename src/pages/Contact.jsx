@@ -264,7 +264,7 @@ export default function Contact() {
                     <Mail className="w-5 h-5 text-[#E85D25] shrink-0 mt-1" />
                     <div>
                       <div className="font-mono-code text-xs text-[#F5A623] uppercase">Email Enquiries</div>
-                      <div className="font-semibold">tejeswararao@indusgroup.in</div>
+                      <div className="font-semibold">bussinessdevelopment@indusgroup.in</div>
                     </div>
                   </div>
 
