@@ -12,11 +12,52 @@ export default function Contact() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [submittedData, setSubmittedData] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
   const [activeFaq, setActiveFaq] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const data = new FormData();
+      data.append('access_key', '6cad2cb0-89d9-46f8-b255-adbb261a3250');
+      data.append('name', formData.fullName);
+      data.append('email', formData.email);
+      data.append('phone', formData.phone);
+      data.append('sector', formData.sector);
+      data.append('message', formData.message);
+      data.append('subject', `New Contact Inquiry from ${formData.fullName} - Indus Group`);
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitted(true);
+        setSubmittedData(formData);
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          sector: 'Hospitality',
+          dates: '',
+          message: ''
+        });
+      } else {
+        setSubmitError(result.message || 'Something went wrong while submitting. Please try again.');
+      }
+    } catch (err) {
+      setSubmitError('Network error. Please check your connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const faqs = [
@@ -73,10 +114,13 @@ export default function Contact() {
                     Reservation Request Received
                   </h3>
                   <p className="text-[#6B6E7A] max-w-md mx-auto text-sm leading-relaxed">
-                    Thank you, <span className="font-bold text-[#001849]">{formData.fullName}</span>. Our VIP Concierge coordinator will contact you shortly at <span className="font-mono-code text-[#E85D25]">{formData.email}</span> to confirm your customized stay details.
+                    Thank you, <span className="font-bold text-[#001849]">{submittedData?.fullName || 'Valued Guest'}</span>. Our VIP Concierge coordinator will contact you shortly at <span className="font-mono-code text-[#E85D25]">{submittedData?.email}</span> to confirm your customized stay details.
                   </p>
                   <button 
-                    onClick={() => setSubmitted(false)} 
+                    onClick={() => {
+                      setSubmitted(false);
+                      setSubmittedData(null);
+                    }} 
                     className="font-mono-code text-xs uppercase tracking-wider text-[#E85D25] hover:underline pt-4 inline-block font-semibold"
                   >
                     ← Submit Another Inquiry
@@ -84,12 +128,20 @@ export default function Contact() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  <input type="hidden" name="access_key" value="6cad2cb0-89d9-46f8-b255-adbb261a3250" />
+                  
                   <div className="eyebrow">
                     <span>Reservation & Service Form</span>
                   </div>
                   <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#001849] mb-6">
                     Book Your Custom Experience
                   </h2>
+
+                  {submitError && (
+                    <div className="p-4 bg-red-50 border border-red-200 text-red-700 text-xs font-mono-code rounded-md">
+                      {submitError}
+                    </div>
+                  )}
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
@@ -98,6 +150,7 @@ export default function Contact() {
                       </label>
                       <input 
                         type="text" 
+                        name="name"
                         required
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
@@ -111,6 +164,7 @@ export default function Contact() {
                       </label>
                       <input 
                         type="email" 
+                        name="email"
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -127,6 +181,7 @@ export default function Contact() {
                       </label>
                       <input 
                         type="tel" 
+                        name="phone"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="+1 (555) 000-0000"
@@ -139,6 +194,7 @@ export default function Contact() {
                         Target Sector
                       </label>
                       <select 
+                        name="sector"
                         value={formData.sector}
                         onChange={(e) => setFormData({ ...formData, sector: e.target.value })}
                         className="w-full bg-[#FBF8F2] border border-[#14171F]/20 p-3 text-sm focus:outline-none focus:border-[#E85D25]"
@@ -156,6 +212,7 @@ export default function Contact() {
                       Additional Requests or Project Notes
                     </label>
                     <textarea 
+                      name="message"
                       rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -166,9 +223,10 @@ export default function Contact() {
 
                   <button 
                     type="submit"
-                    className="w-full bg-[#00287A] text-white font-mono-code text-xs uppercase tracking-wider py-4 hover:bg-[#E85D25] transition-colors flex items-center justify-center gap-2 shadow-md"
+                    disabled={isSubmitting}
+                    className="w-full bg-[#00287A] text-white font-mono-code text-xs uppercase tracking-wider py-4 hover:bg-[#E85D25] transition-colors flex items-center justify-center gap-2 shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <span>Submit Reservation Inquiry</span>
+                    <span>{isSubmitting ? 'Submitting...' : 'Submit Reservation Inquiry'}</span>
                     <Send className="w-4 h-4 text-[#F5A623]" />
                   </button>
                 </form>
