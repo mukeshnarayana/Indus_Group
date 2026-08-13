@@ -112,16 +112,6 @@ export default function Gallery() {
       promotion: "Indus Group successfully facilitated a long-term lease transaction at Murali Nagar, welcoming Style Union to this prime retail location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
     },
     {
-      id: 10,
-      brand: 'DMart',
-      state: 'Andhra Pradesh',
-      city: 'Visakhapatnam, Muralinagar',
-      space: '1,000 sqft',
-      status: 'Completed',
-      image: '/muralinagar_dmart.jpg',
-      promotion: "Indus Group successfully facilitated a long-term lease transaction at Muralinagar, Visakhapatnam, welcoming DMart — one of India's most trusted value retail chains — to this prime location. This milestone reflects our commitment to connecting quality developments with India's most trusted retail brands."
-    },
-    {
       id: 11,
       brand: 'IBO',
       state: 'Telangana',
