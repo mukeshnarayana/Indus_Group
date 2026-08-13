@@ -70,11 +70,12 @@ export default function Footer() {
 
                 {/* Facebook */}
                 <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
+                  href="https://www.facebook.com/people/Indus-Group/61593041018837/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Facebook"
-                  className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#ABA69C] hover:text-white hover:bg-[#E85D25] hover:border-[#E85D25] transition-all duration-300 shadow-sm opacity-80 cursor-pointer"
-                  title="Facebook (Link coming soon)"
+                  className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#ABA69C] hover:text-white hover:bg-[#E85D25] hover:border-[#E85D25] transition-all duration-300 shadow-sm"
+                  title="Facebook"
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
